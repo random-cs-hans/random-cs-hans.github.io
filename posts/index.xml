@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>计算机史料随译</title>
-    <link>https://random-cs-hans.github.io/</link>
-    <description>Recent content on 计算机史料随译</description>
+    <title>Posts on 计算机史料随译</title>
+    <link>https://random-cs-hans.github.io/posts/</link>
+    <description>Recent content in Posts on 计算机史料随译</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>Copyright © 2024 计算机史料随译组.</copyright>
     <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://random-cs-hans.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://random-cs-hans.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为你的计算机“编程”</title>
       <link>https://random-cs-hans.github.io/posts/2024-01-31-programming-your-own-computer-alan-kay/</link>

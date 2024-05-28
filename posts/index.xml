@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>Copyright © 2024 计算机史料随译组.</copyright>
-    <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 17 Feb 2024 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://random-cs-hans.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IP 地址这些年 - 2023年回顾</title>
+      <link>https://random-cs-hans.github.io/posts/2024-02-17-ip-addresses-through-2023/</link>
+      <pubDate>Sat, 17 Feb 2024 00:00:00 +0800</pubDate>
+      <guid>https://random-cs-hans.github.io/posts/2024-02-17-ip-addresses-through-2023/</guid>
+      <description>原文所有权利归原作者（Geoff Huston）所有。本译文在获得原作者同意后发布，译文版权声明见结尾。&#xA;All rights of the original work belong to the original author(s) (Geoff Huston). This translation work is published with the approval of the original author(s) and includes its own copyright disclaimer at the end.&#xA;又到了一年一度的 IP 地址回顾时间。让我们看看在过去 12 个月中互联网内有哪些寻址相关的变化，以及 IP 地址分配信息是如何向我们揭示互联网不断变化的特性。&#xA;早在 1992 年左右，互联网工程任务组（IETF）就曾在 &amp;ldquo;下一代 IP&amp;quot;研究项目中凝视他们的预言水晶球，试图了解互联网将如何发展，以及这将对寻址系统提出怎样的要求。我们今天所看到的联网设备的惊人数量确实落在了这项研究的预测范围之内，而且无疑将继续增长。&#xA;人类在不断提高硅芯片的产量并持续改进生产工艺。不仅如此，我们还曾预言，要想让互联网在如此庞大的联网设备群中正常运行，唯一的办法就是部署一个地址空间远远更大的新 IP 协议。IPv6 正是基于这一推理而设计的，它主要要解决的就是海量硅处理器的世界所带来的问题。IPv6 所包含的巨大地址空间，就是为了让我们能够为每一个这样的设备分配一个唯一的公共 IPv6 地址，无论这些设备有多小，也无论它们的部署规模有多大。&#xA;然而，当互联网以惊人的速度发展时，IPv6 的部署进度却相对缓慢而谨慎。目前人们对协议部署的紧迫程度没有展现出任何共识，也仍没有一致认为依赖 IPv4 会拖我们的后腿。&#xA;IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用户数量，这其中明显存在矛盾，其背后的主要原因是互联网已经从“点对点”架构迅速地转变为“客户端/服务器”模式。客户端可以向服务器主动发起通信，但无法向其他客户端主动发起通信。&#xA;网络地址转换器（NAT）非常适合这种客户端/服务器模式，在这种模式下，客户端共享一个较小的公共地址池，并且只在与远程服务器进行会话期间占用一个地址。因为有了 NAT，300 多亿台联网设备才能挤在约 30 亿个公开 IPv4 地址中。无法通过 NAT 通信的应用程序不再有用，也就不再有人使用了。</description>
+    </item>
     <item>
       <title>为你的计算机“编程”</title>
       <link>https://random-cs-hans.github.io/posts/2024-01-31-programming-your-own-computer-alan-kay/</link>

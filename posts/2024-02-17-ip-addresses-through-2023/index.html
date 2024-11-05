@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
    <meta name="description" content="原文所有权利归原作者（Geoff Huston）所有。本译文在获得原作者同意后发布，译文版权声明见结尾。
 All rights of the original work belong to the original author(s) (Geoff Huston). This translation work is published with the approval of the original author(s) and includes its own copyright disclaimer at the end.
+
 又到了一年一度的 IP 地址回顾时间。让我们看看在过去 12 个月中互联网内有哪些寻址相关的变化，以及 IP 地址分配信息是如何向我们揭示互联网不断变化的特性。
 早在 1992 年左右，互联网工程任务组（IETF）就曾在 &ldquo;下一代 IP&quot;研究项目中凝视他们的预言水晶球，试图了解互联网将如何发展，以及这将对寻址系统提出怎样的要求。我们今天所看到的联网设备的惊人数量确实落在了这项研究的预测范围之内，而且无疑将继续增长。
 人类在不断提高硅芯片的产量并持续改进生产工艺。不仅如此，我们还曾预言，要想让互联网在如此庞大的联网设备群中正常运行，唯一的办法就是部署一个地址空间远远更大的新 IP 协议。IPv6 正是基于这一推理而设计的，它主要要解决的就是海量硅处理器的世界所带来的问题。IPv6 所包含的巨大地址空间，就是为了让我们能够为每一个这样的设备分配一个唯一的公共 IPv6 地址，无论这些设备有多小，也无论它们的部署规模有多大。
 然而，当互联网以惊人的速度发展时，IPv6 的部署进度却相对缓慢而谨慎。目前人们对协议部署的紧迫程度没有展现出任何共识，也仍没有一致认为依赖 IPv4 会拖我们的后腿。
 IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用户数量，这其中明显存在矛盾，其背后的主要原因是互联网已经从“点对点”架构迅速地转变为“客户端/服务器”模式。客户端可以向服务器主动发起通信，但无法向其他客户端主动发起通信。
-网络地址转换器（NAT）非常适合这种客户端/服务器模式，在这种模式下，客户端共享一个较小的公共地址池，并且只在与远程服务器进行会话期间占用一个地址。因为有了 NAT，300 多亿台联网设备才能挤在约 30 亿个公开 IPv4 地址中。无法通过 NAT 通信的应用程序不再有用，也就不再有人使用了。">  
+网络地址转换器（NAT）非常适合这种客户端/服务器模式，在这种模式下，客户端共享一个较小的公共地址池，并且只在与远程服务器进行会话期间占用一个地址。因为有了 NAT，300 多亿台联网设备才能挤在约 30 亿个公开 IPv4 地址中。无法通过 NAT 通信的应用程序不再有用，也就不再有人使用了。
+然而，互联网设备数量的增长势不可挡，即使是 NAT 也无法永远承受这样的压力。NAT 将有效寻址空间扩展了“额外” 32 比特，并实现了分时地址共享。这两项技术确实有效地拉伸了 IPv4 地址空间以涵盖更多的客户端设备，但它们并不能将地址空间转化为有无限弹性的资源。">  
 
   <title>
     
@@ -69,78 +71,78 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 </blockquote>
 <p>2023 年，IPv4 已分配地址池的总地址数有史以来第一次缩减，约减少了 40 万个地址，变为年底的 36.85 亿个。这意味着已分配的 IPv4 公共地址池总量缩减了约 0.01%（表 1）。</p>
 <table>
-<thead>
-<tr>
-<th></th>
-<th>2010</th>
-<th>2011</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>地址段（亿万）</td>
-<td>3.227</td>
-<td>3.395</td>
-<td>3.483</td>
-<td>3.537</td>
-<td>3.593</td>
-<td>3.624</td>
-<td>3.643</td>
-<td>3.657</td>
-<td>3.657</td>
-<td>3.682</td>
-<td>3.684</td>
-<td>3.685</td>
-<td>3.687</td>
-<td>3.686</td>
-</tr>
-<tr>
-<td>年度同比变化（百万）</td>
-<td>241.7</td>
-<td>168.0</td>
-<td>88.4</td>
-<td>53.9</td>
-<td>55.9</td>
-<td>30.6</td>
-<td>19.4</td>
-<td>13.2</td>
-<td>0.6</td>
-<td>24.9</td>
-<td>2.2</td>
-<td>1.1</td>
-<td>1.6</td>
-<td>-0.4</td>
-</tr>
-<tr>
-<td>年度相对变化</td>
-<td>8.1%</td>
-<td>5.2%</td>
-<td>2.6%</td>
-<td>1.5%</td>
-<td>1.6%</td>
-<td>0.85%</td>
-<td>0.53%</td>
-<td>0.36%</td>
-<td>0.02%</td>
-<td>0.68%</td>
-<td>0.06%</td>
-<td>0.03%</td>
-<td>0.04%</td>
-<td>0.01%</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th></th>
+          <th>2010</th>
+          <th>2011</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>地址段（亿万）</td>
+          <td>3.227</td>
+          <td>3.395</td>
+          <td>3.483</td>
+          <td>3.537</td>
+          <td>3.593</td>
+          <td>3.624</td>
+          <td>3.643</td>
+          <td>3.657</td>
+          <td>3.657</td>
+          <td>3.682</td>
+          <td>3.684</td>
+          <td>3.685</td>
+          <td>3.687</td>
+          <td>3.686</td>
+      </tr>
+      <tr>
+          <td>年度同比变化（百万）</td>
+          <td>241.7</td>
+          <td>168.0</td>
+          <td>88.4</td>
+          <td>53.9</td>
+          <td>55.9</td>
+          <td>30.6</td>
+          <td>19.4</td>
+          <td>13.2</td>
+          <td>0.6</td>
+          <td>24.9</td>
+          <td>2.2</td>
+          <td>1.1</td>
+          <td>1.6</td>
+          <td>-0.4</td>
+      </tr>
+      <tr>
+          <td>年度相对变化</td>
+          <td>8.1%</td>
+          <td>5.2%</td>
+          <td>2.6%</td>
+          <td>1.5%</td>
+          <td>1.6%</td>
+          <td>0.85%</td>
+          <td>0.53%</td>
+          <td>0.36%</td>
+          <td>0.02%</td>
+          <td>0.68%</td>
+          <td>0.06%</td>
+          <td>0.03%</td>
+          <td>0.04%</td>
+          <td>0.01%</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 1 - 按年份分列的 IPv4 已分配地址数量</p>
 <p>我们是否已用尽 IPv4 地址的所有可用来源？现有地址管理的模式是，未分配的地址由互联网号码分配机构 (IANA) 保存在一个单一的地址池中，地址块分配给区域互联网注册管理机构，后者再将地址分配给不同的终端实体，供其使用或进一步分配。但是，IANA 早在几年前就已经用完了最后一个可用地址池，目前<a href="https://www.iana.org/assignments/ipv4-recovered-address-space/ipv4-recovered-address-space.xhtml">只拥有三个 /24 地址前缀</a>。由于将这个小地址池分成 5 个相等的 153.6 个地址块的方案不可行，这些地址很可能会在 IANA 的回收地址注册表中继续待上一段时间。</p>
@@ -156,225 +158,225 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>由于 IANA 不再是地址的来源，因此我们只需要研究 RIR 的做法，从注册机构的角度了解地址的生命周期。当 IP 地址段根据 RIR 的政策返回或被回收时，通常会在 RIR 所有的地址池中放置一段时间，并标记为保留。将返回或回收的地址保留一段时间后再进行后续分配，能够给各种地址前缀声誉和其它服务（包括路由记录）一些时间，来记录这段前缀已经从之前的状态变为停止使用。经过几个月到几年不等的隔离期后，这些保留地址段会被释放以供重新使用。</p>
 <p>表 2 显示了和表 1 相同的 13 年间，每个 RIR 的地址分配地址的年度同比变化。在某些年份，某些 RIR 的已分配地址池规模有所缩小,通常是由于地址在 RIR 之间的移动，有时是由于行政变动，有时是由于 RIR 自发进行地址转让。</p>
 <table>
-<thead>
-<tr>
-<th></th>
-<th>2010</th>
-<th>2011</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>APNIC</td>
-<td>119.5</td>
-<td>101.0</td>
-<td>0.6</td>
-<td>1.2</td>
-<td>4.6</td>
-<td>7.4</td>
-<td>6.7</td>
-<td>3.2</td>
-<td>0.4</td>
-<td>10.5</td>
-<td>1.7</td>
-<td>1.5</td>
-<td>0.8</td>
-<td>-1.1</td>
-</tr>
-<tr>
-<td>RIPE NCC</td>
-<td>52.3</td>
-<td>40.5</td>
-<td>37.8</td>
-<td>1.0</td>
-<td>33.8</td>
-<td>4.7</td>
-<td>4.1</td>
-<td>3.7</td>
-<td>0.3</td>
-<td>12.0</td>
-<td>0.4</td>
-<td>2.5</td>
-<td>4.7</td>
-<td>6.2</td>
-</tr>
-<tr>
-<td>ARIN</td>
-<td>27.2</td>
-<td>53.8</td>
-<td>24.3</td>
-<td>19.0</td>
-<td>-14.1</td>
-<td>2.3</td>
-<td>-4.8</td>
-<td>-2.3</td>
-<td>-0.3</td>
-<td>-10.1</td>
-<td>-0.9</td>
-<td>-1.7</td>
-<td>-3.8</td>
-<td>-5.5</td>
-</tr>
-<tr>
-<td>LACNIC</td>
-<td>17.1</td>
-<td>13.6</td>
-<td>17.3</td>
-<td>26.3</td>
-<td>18.7</td>
-<td>1.2</td>
-<td>1.5</td>
-<td>1.4</td>
-<td>0.1</td>
-<td>2.4</td>
-<td>1.2</td>
-<td>-0.2</td>
-<td>-0.3</td>
-<td>-0.1</td>
-</tr>
-<tr>
-<td>AFRINIC</td>
-<td>8.8</td>
-<td>9.4</td>
-<td>8.5</td>
-<td>6.3</td>
-<td>12.8</td>
-<td>15.0</td>
-<td>11.9</td>
-<td>7.1</td>
-<td>0.2</td>
-<td>10.1</td>
-<td>-0.2</td>
-<td>-0.9</td>
-<td>0.2</td>
-<td>0.1</td>
-</tr>
-<tr>
-<td>总数</td>
-<td>224.9</td>
-<td>218.3</td>
-<td>88.5</td>
-<td>53.8</td>
-<td>55.8</td>
-<td>30.6</td>
-<td>19.4</td>
-<td>13.1</td>
-<td>0.7</td>
-<td>24.9</td>
-<td>2.2</td>
-<td>1.2</td>
-<td>1.6</td>
-<td>-0.4</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th></th>
+          <th>2010</th>
+          <th>2011</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>APNIC</td>
+          <td>119.5</td>
+          <td>101.0</td>
+          <td>0.6</td>
+          <td>1.2</td>
+          <td>4.6</td>
+          <td>7.4</td>
+          <td>6.7</td>
+          <td>3.2</td>
+          <td>0.4</td>
+          <td>10.5</td>
+          <td>1.7</td>
+          <td>1.5</td>
+          <td>0.8</td>
+          <td>-1.1</td>
+      </tr>
+      <tr>
+          <td>RIPE NCC</td>
+          <td>52.3</td>
+          <td>40.5</td>
+          <td>37.8</td>
+          <td>1.0</td>
+          <td>33.8</td>
+          <td>4.7</td>
+          <td>4.1</td>
+          <td>3.7</td>
+          <td>0.3</td>
+          <td>12.0</td>
+          <td>0.4</td>
+          <td>2.5</td>
+          <td>4.7</td>
+          <td>6.2</td>
+      </tr>
+      <tr>
+          <td>ARIN</td>
+          <td>27.2</td>
+          <td>53.8</td>
+          <td>24.3</td>
+          <td>19.0</td>
+          <td>-14.1</td>
+          <td>2.3</td>
+          <td>-4.8</td>
+          <td>-2.3</td>
+          <td>-0.3</td>
+          <td>-10.1</td>
+          <td>-0.9</td>
+          <td>-1.7</td>
+          <td>-3.8</td>
+          <td>-5.5</td>
+      </tr>
+      <tr>
+          <td>LACNIC</td>
+          <td>17.1</td>
+          <td>13.6</td>
+          <td>17.3</td>
+          <td>26.3</td>
+          <td>18.7</td>
+          <td>1.2</td>
+          <td>1.5</td>
+          <td>1.4</td>
+          <td>0.1</td>
+          <td>2.4</td>
+          <td>1.2</td>
+          <td>-0.2</td>
+          <td>-0.3</td>
+          <td>-0.1</td>
+      </tr>
+      <tr>
+          <td>AFRINIC</td>
+          <td>8.8</td>
+          <td>9.4</td>
+          <td>8.5</td>
+          <td>6.3</td>
+          <td>12.8</td>
+          <td>15.0</td>
+          <td>11.9</td>
+          <td>7.1</td>
+          <td>0.2</td>
+          <td>10.1</td>
+          <td>-0.2</td>
+          <td>-0.9</td>
+          <td>0.2</td>
+          <td>0.1</td>
+      </tr>
+      <tr>
+          <td>总数</td>
+          <td>224.9</td>
+          <td>218.3</td>
+          <td>88.5</td>
+          <td>53.8</td>
+          <td>55.8</td>
+          <td>30.6</td>
+          <td>19.4</td>
+          <td>13.1</td>
+          <td>0.7</td>
+          <td>24.9</td>
+          <td>2.2</td>
+          <td>1.2</td>
+          <td>1.6</td>
+          <td>-0.4</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 2 - 已分配 IPv4 地址的年度变化（百万），按 RIR 区分</p>
 <p>每个 RIR 都在使用它们最后的 IPv4 地址池了。到 2023 年底，所有 RIR 的可用地址池加起来约有 360 万个地址，主要由 APNIC（250 万）和 AFRINIC（120 万）持有。约有 1250 万个地址被标记为保留地址，其中 ARIN 拥有 520 万个地址，AFRINIC 拥有 400 万个地址。从表 3 中可以看出，ARIN 的保留池（98K）和 RIPE NCC 的保留池（26K）略有净减少，而 APNIC 的保留池增加了 68.7 万个地址，LACNIC 和 AFRINIC 的保留池有小幅增长。</p>
 <table>
-<thead>
-<tr>
-<th></th>
-<th>可用地址数</th>
-<th></th>
-<th></th>
-<th>保留地址数</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>RIR</td>
-<td>2021</td>
-<td>2022</td>
-<td>2023</td>
-<td>2021</td>
-<td>2022</td>
-<td>2023</td>
-</tr>
-<tr>
-<td>APNIC</td>
-<td>3,533,056</td>
-<td>2,503,424</td>
-<td>2,469,120</td>
-<td>1,787,904</td>
-<td>1,514,752</td>
-<td>2,202,624</td>
-</tr>
-<tr>
-<td>RIPE NCC</td>
-<td>-</td>
-<td>-</td>
-<td>1,024</td>
-<td>762,104</td>
-<td>737,496</td>
-<td>708,872</td>
-</tr>
-<tr>
-<td>ARIN</td>
-<td>4,608</td>
-<td>8,448</td>
-<td>8,960</td>
-<td>5,244,160</td>
-<td>5,311,488</td>
-<td>5,213,184</td>
-</tr>
-<tr>
-<td>LACNIC</td>
-<td>7,168</td>
-<td>1,024</td>
-<td>256</td>
-<td>224,768</td>
-<td>148,480</td>
-<td>151,296</td>
-</tr>
-<tr>
-<td>AFRINIC</td>
-<td>1,652,480</td>
-<td>1,403,136</td>
-<td>1,201,664</td>
-<td>4,065,024</td>
-<td>4,104,960</td>
-<td>4,186,112</td>
-</tr>
-<tr>
-<td>总数</td>
-<td>5,197,312</td>
-<td>3,916,032</td>
-<td>3,681,024</td>
-<td>12,083,960</td>
-<td>11,817,176</td>
-<td>12,462,088</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th></th>
+          <th>可用地址数</th>
+          <th></th>
+          <th></th>
+          <th>保留地址数</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RIR</td>
+          <td>2021</td>
+          <td>2022</td>
+          <td>2023</td>
+          <td>2021</td>
+          <td>2022</td>
+          <td>2023</td>
+      </tr>
+      <tr>
+          <td>APNIC</td>
+          <td>3,533,056</td>
+          <td>2,503,424</td>
+          <td>2,469,120</td>
+          <td>1,787,904</td>
+          <td>1,514,752</td>
+          <td>2,202,624</td>
+      </tr>
+      <tr>
+          <td>RIPE NCC</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1,024</td>
+          <td>762,104</td>
+          <td>737,496</td>
+          <td>708,872</td>
+      </tr>
+      <tr>
+          <td>ARIN</td>
+          <td>4,608</td>
+          <td>8,448</td>
+          <td>8,960</td>
+          <td>5,244,160</td>
+          <td>5,311,488</td>
+          <td>5,213,184</td>
+      </tr>
+      <tr>
+          <td>LACNIC</td>
+          <td>7,168</td>
+          <td>1,024</td>
+          <td>256</td>
+          <td>224,768</td>
+          <td>148,480</td>
+          <td>151,296</td>
+      </tr>
+      <tr>
+          <td>AFRINIC</td>
+          <td>1,652,480</td>
+          <td>1,403,136</td>
+          <td>1,201,664</td>
+          <td>4,065,024</td>
+          <td>4,104,960</td>
+          <td>4,186,112</td>
+      </tr>
+      <tr>
+          <td>总数</td>
+          <td>5,197,312</td>
+          <td>3,916,032</td>
+          <td>3,681,024</td>
+          <td>12,083,960</td>
+          <td>11,817,176</td>
+          <td>12,462,088</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 3 - 可用和保留的 IPv4 池大小，截至 2023 年 12 月 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>图 1 显示了按年份分列的 RIR IPv4 地址分配数量，但要准确比较各 RIR 的分配情况却很困难，因为各 RIR 之间存在一些微妙但重要的差异，特别是在 IPv4 地址转让的处理上。</p>
 <p>就 ARIN 而言，受 ARIN 服务的两个实体之间的转让在概念上被视为两项不同的交易——一个将地址退还给 ARIN 注册机构，另一个对应 ARIN 进行新的分配，转让的日期记录为 RIR 的新分配的日期。其他 RIR 将地址转让看作更改已分配地址的指定持有者，在处理转让时，RIR 保留了这些地址的原始分配日期。当我们查看 RIR 公布的各个交易记录数据并按年份统计时，ARIN 的记录额外包含了当年处理的地址转让量，而其他 RIR 的记录只包括当年进行的分配。</p>
 <p>为了提供整体视角，我们分析时必须要能区分 RIR 记录地址交易方式的差异。在本研究中，我们定义“分配”为注册记录中从“保留”或“可用”状态到“已分配”状态的转换。这是为了能区分出处理地址转让的各种操作，因为地址转让一般不涉及明显的状态变化，因为被转让的地址块在整个转让过程中仍处于“已分配”状态。分析 RIR 公布的数据，比较每年年底的地址池状态与该年年初的状态，就得到了 图 1 的数据。如果一段地址在年初未登记为“已分配”，年底却变为“已分配”，则可确定分配是在该年内发生。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig1.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig1.png"
-         alt="图 1 - 各 RIR 的 IPv4 被分配地址总数（百万），按年份分列"/></a><figcaption>
-            <p>图 1 - 各 RIR 的 IPv4 被分配地址总数（百万），按年份分列</p>
-        </figcaption>
+    alt="图 1 - 各 RIR 的 IPv4 被分配地址总数（百万），按年份分列"></a><figcaption>
+      <p>图 1 - 各 RIR 的 IPv4 被分配地址总数（百万），按年份分列</p>
+    </figcaption>
 </figure>
 
 <p>图 2 显示了按年份分列的 RIR IPv4 分配次数，这些数据也是通过使用与图 1 相同的数据分析技术生成的。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addrfig2-1.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addrfig2-1.png"
-         alt="图 2 - 各 RIR 的 IPv4 分配次数，按年份分列"/></a><figcaption>
-            <p>图 2 - 各 RIR 的 IPv4 分配次数，按年份分列</p>
-        </figcaption>
+    alt="图 2 - 各 RIR 的 IPv4 分配次数，按年份分列"></a><figcaption>
+      <p>图 2 - 各 RIR 的 IPv4 分配次数，按年份分列</p>
+    </figcaption>
 </figure>
 
 <p>从这两张图可以明显看出，近年来 IPv4 地址分配的平均规模已大幅缩减，与每个 RIR 的各种 IPv4 地址耗尽政策相呼应。</p>
@@ -382,242 +384,242 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>近年来，RIR 允许登记地址持有者之间的 IPv4 地址转让，以在向 RIR 除退回闲置地址的方式之外，开放另一种地址的再分配方式。这是为了应对 IPv4 地址枯竭带来的各种问题，其根本动机是通过 IPv4 地址的市场激励，促进对原本闲置或低效使用的地址块的再利用，并确保这种转让在注册系统中有公开记录。</p>
 <p>表 4 列出了过去十一年中登记的转让数量。数量既包括 RIR 间的转让，也包括 RIR 内的转让。它还包括基于合并和收购以及以其他理由进行的地址转让。每次转让都被视为一次单独交易，如果是 RIR 之间的转让，则计入接收 RIR 的转让总数。</p>
 <table>
-<thead>
-<tr>
-<th>接收 RIR</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>APNIC</td>
-<td>158</td>
-<td>180</td>
-<td>307</td>
-<td>451</td>
-<td>840</td>
-<td>845</td>
-<td>491</td>
-<td>533</td>
-<td>820</td>
-<td>785</td>
-<td>745</td>
-<td>796</td>
-</tr>
-<tr>
-<td>RIPE NCC</td>
-<td>10</td>
-<td>171</td>
-<td>1,054</td>
-<td>2,836</td>
-<td>2,373</td>
-<td>2,451</td>
-<td>3,775</td>
-<td>4,221</td>
-<td>4,696</td>
-<td>5,742</td>
-<td>4,640</td>
-<td>4,937</td>
-</tr>
-<tr>
-<td>ARIN</td>
-<td></td>
-<td></td>
-<td></td>
-<td>3</td>
-<td>22</td>
-<td>26</td>
-<td>26</td>
-<td>68</td>
-<td>94</td>
-<td>150</td>
-<td>141</td>
-<td>97</td>
-</tr>
-<tr>
-<td>LACNIC</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>2</td>
-<td></td>
-<td>3</td>
-<td>9</td>
-<td>17</td>
-<td>20</td>
-</tr>
-<tr>
-<td>AFRINIC</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>17</td>
-<td>27</td>
-<td>26</td>
-<td>80</td>
-<td>58</td>
-<td>14</td>
-</tr>
-<tr>
-<td>总数</td>
-<td>168</td>
-<td>351</td>
-<td>1,361</td>
-<td>3,290</td>
-<td>3,235</td>
-<td>3,322</td>
-<td>4,311</td>
-<td>4,849</td>
-<td>5,639</td>
-<td>6,766</td>
-<td>5,601</td>
-<td>5,864</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>接收 RIR</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>APNIC</td>
+          <td>158</td>
+          <td>180</td>
+          <td>307</td>
+          <td>451</td>
+          <td>840</td>
+          <td>845</td>
+          <td>491</td>
+          <td>533</td>
+          <td>820</td>
+          <td>785</td>
+          <td>745</td>
+          <td>796</td>
+      </tr>
+      <tr>
+          <td>RIPE NCC</td>
+          <td>10</td>
+          <td>171</td>
+          <td>1,054</td>
+          <td>2,836</td>
+          <td>2,373</td>
+          <td>2,451</td>
+          <td>3,775</td>
+          <td>4,221</td>
+          <td>4,696</td>
+          <td>5,742</td>
+          <td>4,640</td>
+          <td>4,937</td>
+      </tr>
+      <tr>
+          <td>ARIN</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>3</td>
+          <td>22</td>
+          <td>26</td>
+          <td>26</td>
+          <td>68</td>
+          <td>94</td>
+          <td>150</td>
+          <td>141</td>
+          <td>97</td>
+      </tr>
+      <tr>
+          <td>LACNIC</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>2</td>
+          <td></td>
+          <td>3</td>
+          <td>9</td>
+          <td>17</td>
+          <td>20</td>
+      </tr>
+      <tr>
+          <td>AFRINIC</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>17</td>
+          <td>27</td>
+          <td>26</td>
+          <td>80</td>
+          <td>58</td>
+          <td>14</td>
+      </tr>
+      <tr>
+          <td>总数</td>
+          <td>168</td>
+          <td>351</td>
+          <td>1,361</td>
+          <td>3,290</td>
+          <td>3,235</td>
+          <td>3,322</td>
+          <td>4,311</td>
+          <td>4,849</td>
+          <td>5,639</td>
+          <td>6,766</td>
+          <td>5,601</td>
+          <td>5,864</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 4 - 每年的 IPv4 地址转让次数</p>
 <p>不同 RIR 报告的数字之间的差异很有意思。在 AFRINIC 和 LACNIC 服务区域，地址持有者似乎并没有明显接纳与地址转让的相关政策，而在 RIPE NCC 服务区域，采用这些政策的热情似乎很高！</p>
 <p>从每年转让的地址数量来看，情况略有不同（表 5）。</p>
 <table>
-<thead>
-<tr>
-<th>接收 RIR</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>APNIC</td>
-<td>1.6</td>
-<td>2.3</td>
-<td>4.1</td>
-<td>6.6</td>
-<td>8.2</td>
-<td>4.9</td>
-<td>10.0</td>
-<td>4.3</td>
-<td>16.6</td>
-<td>6.5</td>
-<td>3.7</td>
-<td>2.7</td>
-</tr>
-<tr>
-<td>RIPE NCC</td>
-<td>0.1</td>
-<td>2.0</td>
-<td>9.6</td>
-<td>11.6</td>
-<td>9.2</td>
-<td>24.6</td>
-<td>19.5</td>
-<td>26.9</td>
-<td>18.2</td>
-<td>16.2</td>
-<td>36.9</td>
-<td>20.8</td>
-</tr>
-<tr>
-<td>ARIN</td>
-<td></td>
-<td></td>
-<td></td>
-<td>0.1</td>
-<td>0.3</td>
-<td>0.2</td>
-<td></td>
-<td>0.3</td>
-<td>0.2</td>
-<td>0.2</td>
-<td>3.1</td>
-<td>1.6</td>
-</tr>
-<tr>
-<td>LACNIC</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>AFRINIC</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>0.2</td>
-<td>0.5</td>
-<td>1.2</td>
-<td>3.4</td>
-<td>0.5</td>
-<td>0.1</td>
-</tr>
-<tr>
-<td>总数</td>
-<td>1.7</td>
-<td>4.3</td>
-<td>13.7</td>
-<td>18.2</td>
-<td>17.6</td>
-<td>29.7</td>
-<td>29.7</td>
-<td>31.9</td>
-<td>36.2</td>
-<td>26.4</td>
-<td>44.3</td>
-<td>25.3</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>接收 RIR</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>APNIC</td>
+          <td>1.6</td>
+          <td>2.3</td>
+          <td>4.1</td>
+          <td>6.6</td>
+          <td>8.2</td>
+          <td>4.9</td>
+          <td>10.0</td>
+          <td>4.3</td>
+          <td>16.6</td>
+          <td>6.5</td>
+          <td>3.7</td>
+          <td>2.7</td>
+      </tr>
+      <tr>
+          <td>RIPE NCC</td>
+          <td>0.1</td>
+          <td>2.0</td>
+          <td>9.6</td>
+          <td>11.6</td>
+          <td>9.2</td>
+          <td>24.6</td>
+          <td>19.5</td>
+          <td>26.9</td>
+          <td>18.2</td>
+          <td>16.2</td>
+          <td>36.9</td>
+          <td>20.8</td>
+      </tr>
+      <tr>
+          <td>ARIN</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>0.1</td>
+          <td>0.3</td>
+          <td>0.2</td>
+          <td></td>
+          <td>0.3</td>
+          <td>0.2</td>
+          <td>0.2</td>
+          <td>3.1</td>
+          <td>1.6</td>
+      </tr>
+      <tr>
+          <td>LACNIC</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>AFRINIC</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>0.2</td>
+          <td>0.5</td>
+          <td>1.2</td>
+          <td>3.4</td>
+          <td>0.5</td>
+          <td>0.1</td>
+      </tr>
+      <tr>
+          <td>总数</td>
+          <td>1.7</td>
+          <td>4.3</td>
+          <td>13.7</td>
+          <td>18.2</td>
+          <td>17.6</td>
+          <td>29.7</td>
+          <td>29.7</td>
+          <td>31.9</td>
+          <td>36.2</td>
+          <td>26.4</td>
+          <td>44.3</td>
+          <td>25.3</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 5 - 每年转让的 IPv4 地址数量（百万）。</p>
 <p>图 3 和图 4 显示了这些数字的分布情况。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig3.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig3.png"
-         alt="图 3 - IPv4 地址转让次数，2012-2023"/></a><figcaption>
-            <p>图 3 - IPv4 地址转让次数，2012-2023</p>
-        </figcaption>
+    alt="图 3 - IPv4 地址转让次数，2012-2023"></a><figcaption>
+      <p>图 3 - IPv4 地址转让次数，2012-2023</p>
+    </figcaption>
 </figure>
 
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig4.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig4.png"
-         alt="图 4 - IPv4 地址转让数量，2012-2023"/></a><figcaption>
-            <p>图 4 - IPv4 地址转让数量，2012-2023</p>
-        </figcaption>
+    alt="图 4 - IPv4 地址转让数量，2012-2023"></a><figcaption>
+      <p>图 4 - IPv4 地址转让数量，2012-2023</p>
+    </figcaption>
 </figure>
 
 <p>地址转让量在 2022 年达到峰值，2023 年有所下降。就 APNIC 而言，峰值出现在 2020 年，而 APNIC 2023 年的传输量与 2012 年的传输量相当。如果地址转让的目的是地址分配后的再分配，那么 2023 年内，对这一功能的需求似乎正在减弱。</p>
@@ -628,30 +630,30 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>2021 年初，这个未公开的地址池规模大幅缩减。2021 年的主要变化是互联网路由系统把 ARPANET 早期分配给美国国防部的地址空间中的约 7 个 /8 重新宣告了出来。到 2021 年底，AS749 宣告出的 IPv4 地址比其他任何网络都多，达到 211,581,184 个，相当于 /4.34 的前缀长度，占 IPv4 地址池总数的 5%。</p>
 <p>在 2022 年和 2023 年期间，未宣告地址段的数量恢复了之前的上升趋势。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig5.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig5.png"
-         alt="图 5 - IPv4 未宣告的地址数量"/></a><figcaption>
-            <p>图 5 - IPv4 未宣告的地址数量</p>
-        </figcaption>
+    alt="图 5 - IPv4 未宣告的地址数量"></a><figcaption>
+      <p>图 5 - IPv4 未宣告的地址数量</p>
+    </figcaption>
 </figure>
 
 <p>图 6a 显示了 2000 年以来三种 IPv4 地址池，已分配、已宣告和未宣告地址池的总体变化。收紧的地址政策开始实施的时间能与 2011 年初 IANA 中央未分配地址池耗尽对应上。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig6a.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig6a.png"
-         alt="图 6a - IPv4 地址池大小，2000-2024"/></a><figcaption>
-            <p>图 6a - IPv4 地址池大小，2000-2024</p>
-        </figcaption>
+    alt="图 6a - IPv4 地址池大小，2000-2024"></a><figcaption>
+      <p>图 6a - IPv4 地址池大小，2000-2024</p>
+    </figcaption>
 </figure>
 
 <p>我们还可以看看 2023 年，这些地址池自年初以来的变化情况，如图 6b 所示。已宣告地址的总数在这一年中减少了约 2200 万个地址。RIR 的记录也显示了全年净减少 23.6 万个已分配地址。全年未宣告地址库增加了 2100 万个地址。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig6b.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig6b.png"
-         alt="图 6b - IPv4 地址池大小在 2023 年内的变化"/></a><figcaption>
-            <p>图 6b - IPv4 地址池大小在 2023 年内的变化</p>
-        </figcaption>
+    alt="图 6b - IPv4 地址池大小在 2023 年内的变化"></a><figcaption>
+      <p>图 6b - IPv4 地址池大小在 2023 年内的变化</p>
+    </figcaption>
 </figure>
 
 <p>从相对值的角度，表示为在整体已分配 IP 地址池中的占比，未宣告的地址数量从 2011 年占已分配地址池总量的 25% 降至 2016 年初的 22%，随后在 2020 年底升至 24%。2021 年，这一数字下降到 16%，主要原因是美国国防部遗留地址空间的宣告，而不是激活了其它从前未宣告的地址空间。由此可以得出结论，在过去 12 个月中，地址转让活动并未对地址利用效率的总体情况产生任何积极的净变化（图 7）。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig7.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig7.png"
-         alt="图 7 - 未宣告地址在整体已分配地址池中的占比"/></a><figcaption>
-            <p>图 7 - 未宣告地址在整体已分配地址池中的占比</p>
-        </figcaption>
+    alt="图 7 - 未宣告地址在整体已分配地址池中的占比"></a><figcaption>
+      <p>图 7 - 未宣告地址在整体已分配地址池中的占比</p>
+    </figcaption>
 </figure>
 
 <p>该数据还显示出，转让市场有些疲软。大多数 RIR 的地址转让交易数量都在上升，但除 RIPE NCC（表 4 和表 5）地区外，地址转让总量却在下降。地址市场似乎未能有效地带出闲置地址并将它们重新部署到路由网络中。</p>
@@ -661,25 +663,25 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>到 2022 年开始的 18 个月内，价格呈指数上升，出现了新的动态，到 2021 年底，价格上升到每个地址 45 美元到 60 美元之间。2022 年，全年平均市场价格下降，但价格差异增大，年底的交易价格在每个地址 40 美元至 60 美元之间。这种价格下降的趋势持续到 2023 年，到 2023 年底，IPv4 地址的交易单价在 30 美元到 40 美元之间。两个地址的价值没有任何区别，对于这样一个无差别的商品市场来说，这种 30% 的价格变化超乎意料，有些不寻常。</p>
 <p>如果价格能反映供求关系，那么需求的增幅似乎远远大于供应，2021 年的价格上涨反映了近来对地址稀缺造成的溢价（图 8）。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig8.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig8.png"
-         alt="图 8 - IPv4 地址价格时序（数据来自 Hilco Streambank）"/></a><figcaption>
-            <p>图 8 - IPv4 地址价格时序（数据来自 Hilco Streambank）</p>
-        </figcaption>
+    alt="图 8 - IPv4 地址价格时序（数据来自 Hilco Streambank）"></a><figcaption>
+      <p>图 8 - IPv4 地址价格时序（数据来自 Hilco Streambank）</p>
+    </figcaption>
 </figure>
 
 <p>可交易 IPv4 地址的供应量是否在下降？要回答这个问题，可以通过观察已转让地址的注册年限来了解一些情况。这些地址主要是最近分配的地址，还是持有时间较长的地址，持有者希望实现未使用资产的内在价值？最根本的问题与转让地址的年龄分布有关，这个年龄对应了地址首次由 RIR 系统分配或指派之后的时间。</p>
 <p>图 9 和图 10 逐年显示了转让地址的累积年龄分布。如图 9 （每个地址单独计数）所示，在 2023 年的所有转让地址中，约 15% 来自遗留地址的持有者。由此看来，回收遗留地址库的努力已接近尾声，转让的遗留地址数量已急剧下降。</p>
 <p>在 2019 年至 2021 年期间，有一部分地址持有者在获取最近分配的地址之后，似乎会先按政策要求在两年的最短期限内保留这些地址，然后就在市场上转让。前几年，有 8% 的被转让地址是在转让前五年内分配的。2022 年，这一数字下降到 4%，这可能是因为 2022 年地址分配数量较少，地址持有者的行为模式应该没有变化。到了 2023 年，这一现象几乎消失，原因是 RIR 分配的地址数量非常之少，同样也不是因为地址持有者的行为模式有所改变。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig9.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig9.png"
-         alt="图 9 - 转让地址的年龄分布（按地址数目）"/></a><figcaption>
-            <p>图 9 - 转让地址的年龄分布（按地址数目）</p>
-        </figcaption>
+    alt="图 9 - 转让地址的年龄分布（按地址数目）"></a><figcaption>
+      <p>图 9 - 转让地址的年龄分布（按地址数目）</p>
+    </figcaption>
 </figure>
 
 <p>图 10 显示了转让交易的累积年限分布（每笔转让单独计数）。2023 年上面两个分布之间的差异表明，最近的单笔地址分配规模要小得多，但仍在进行买卖。2023 年记录的转让交易笔数中有 20% 是过去五年内分配的地址前缀，但这些交易的地址数目只占 2023 年转让地址总量的不到 2%。同年记录中，转让地址数量的约 30% 是在 20 年或更早之前分配的，但对应的交易笔数仅占 12%。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig10.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig10.png"
-         alt="图 10 - 转让地址的年龄分布（按交易笔数）"/></a><figcaption>
-            <p>图 10 - 转让地址的年龄分布（按交易笔数）</p>
-        </figcaption>
+    alt="图 10 - 转让地址的年龄分布（按交易笔数）"></a><figcaption>
+      <p>图 10 - 转让地址的年龄分布（按交易笔数）</p>
+    </figcaption>
 </figure>
 
 <p>地址转让过程的驱动力有如下几个。其一是供不应求，不可避免地导致价格上涨。这会促使一些网络运营商提前购买地址，因为它们会预测到再晚买入会遇到更高价格。这个因素还可能促使一些地址持有者继续等待，等到价格上涨之后再出售地址。综合来看，这些动机可能会损害市场流动性，并形成一个导致价格进一步上涨的正反馈循环。2021 年的情况似乎就是如此。</p>
@@ -692,149 +694,149 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <h1 id="地址的进出口">地址的进出口</h1>
 <p>下一个议题是转让地址的国际流动。让我们来看看发起转让地址数量最多的十个经济体（表 6），不论目的地（包括同一经济体内部的“国内 ”转让），然后再看看接收转让地址数量最多的十个经济体（表 7），以及转让量最大的二十笔国际交易（表 8）。这些表格是从 RIR 在 2023 年发布的地址转让记录中总结出的。</p>
 <table>
-<thead>
-<tr>
-<th>排名</th>
-<th>国家代号</th>
-<th>发起转让地址数量</th>
-<th>经济体名</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>US</td>
-<td>7,942,912</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>2</td>
-<td>GB</td>
-<td>2,858,240</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>3</td>
-<td>NL</td>
-<td>1,927,680</td>
-<td>荷兰</td>
-</tr>
-<tr>
-<td>4</td>
-<td>JP</td>
-<td>1,495,296</td>
-<td>日本</td>
-</tr>
-<tr>
-<td>5</td>
-<td>GR</td>
-<td>1,032,192</td>
-<td>希腊</td>
-</tr>
-<tr>
-<td>6</td>
-<td>RU</td>
-<td>904,704</td>
-<td>俄罗斯</td>
-</tr>
-<tr>
-<td>7</td>
-<td>DE</td>
-<td>821,504</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>8</td>
-<td>IT</td>
-<td>727,808</td>
-<td>意大利</td>
-</tr>
-<tr>
-<td>9</td>
-<td>SE</td>
-<td>626,432</td>
-<td>瑞典</td>
-</tr>
-<tr>
-<td>10</td>
-<td>BE</td>
-<td>528,384</td>
-<td>比利时</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>排名</th>
+          <th>国家代号</th>
+          <th>发起转让地址数量</th>
+          <th>经济体名</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>US</td>
+          <td>7,942,912</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>GB</td>
+          <td>2,858,240</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>NL</td>
+          <td>1,927,680</td>
+          <td>荷兰</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>JP</td>
+          <td>1,495,296</td>
+          <td>日本</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>GR</td>
+          <td>1,032,192</td>
+          <td>希腊</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>RU</td>
+          <td>904,704</td>
+          <td>俄罗斯</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>DE</td>
+          <td>821,504</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>IT</td>
+          <td>727,808</td>
+          <td>意大利</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>SE</td>
+          <td>626,432</td>
+          <td>瑞典</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>BE</td>
+          <td>528,384</td>
+          <td>比利时</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 6 - 2023 年发起最多地址转让的前十个经济体</p>
 <table>
-<thead>
-<tr>
-<th>排名</th>
-<th>国家代号</th>
-<th>接收转让地址数量</th>
-<th>经济体名</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>GB</td>
-<td>8,518,400</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>2</td>
-<td>US</td>
-<td>3,424,000</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>3</td>
-<td>NL</td>
-<td>1,830,400</td>
-<td>荷兰</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GR</td>
-<td>1,044,224</td>
-<td>希腊</td>
-</tr>
-<tr>
-<td>5</td>
-<td>JP</td>
-<td>938,496</td>
-<td>日本</td>
-</tr>
-<tr>
-<td>6</td>
-<td>DE</td>
-<td>880,640</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>7</td>
-<td>RU</td>
-<td>697,088</td>
-<td>俄罗斯</td>
-</tr>
-<tr>
-<td>8</td>
-<td>SE</td>
-<td>685,056</td>
-<td>瑞典</td>
-</tr>
-<tr>
-<td>9</td>
-<td>SG</td>
-<td>558,336</td>
-<td>新加坡</td>
-</tr>
-<tr>
-<td>10</td>
-<td>BE</td>
-<td>540,928</td>
-<td>比利时</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>排名</th>
+          <th>国家代号</th>
+          <th>接收转让地址数量</th>
+          <th>经济体名</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>GB</td>
+          <td>8,518,400</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>US</td>
+          <td>3,424,000</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>NL</td>
+          <td>1,830,400</td>
+          <td>荷兰</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>GR</td>
+          <td>1,044,224</td>
+          <td>希腊</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>JP</td>
+          <td>938,496</td>
+          <td>日本</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>DE</td>
+          <td>880,640</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>RU</td>
+          <td>697,088</td>
+          <td>俄罗斯</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>SE</td>
+          <td>685,056</td>
+          <td>瑞典</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>SG</td>
+          <td>558,336</td>
+          <td>新加坡</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>BE</td>
+          <td>540,928</td>
+          <td>比利时</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 7 - 2023 年 <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 发起最多地址转让的前十个经济体</p>
 <p>一些 RIR 记录地址转让的国家代号的原则是，使用地址持有者实体总部的实际位置，而不是地址在互联网上的实际使用地。另一些 RIR 允许持有者更新转让记录的地理位置，改为此地址的预期使用地点。一般情况下我们无法确信持有人对使用地点的声明，因此我们没法确知这些自发的记录能反映地址的实际使用地点，还是只是它们为了方便而填入的地址。</p>
@@ -842,568 +844,568 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>云服务使用任播时，它的 IP 地址会同时处于多个位置。即便云服务使用传统单播，它所使用的地址也可能随着云服务按需调整各地的地址数目，而在它的接入点间流动。总之，这些位置信息只是一个“模糊”的近似值，而不是精确的定位。</p>
 <p>考虑了这些后，我们在来看看 2023 年，来源地和目的地不同的地址转让进出口情况。</p>
 <table>
-<thead>
-<tr>
-<th></th>
-<th>来源</th>
-<th>目的</th>
-<th>转让地址数量（百万）</th>
-<th>来源经济体名</th>
-<th>目的经济体名</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>US</td>
-<td>GB</td>
-<td>5,389,568</td>
-<td>美国</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>2</td>
-<td>IT</td>
-<td>US</td>
-<td>344,064</td>
-<td>意大利</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>3</td>
-<td>JP</td>
-<td>GB</td>
-<td>329,728</td>
-<td>日本</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GB</td>
-<td>US</td>
-<td>238,336</td>
-<td>英国</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>5</td>
-<td>DE</td>
-<td>GB</td>
-<td>141,568</td>
-<td>德国</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>6</td>
-<td>CA</td>
-<td>GB</td>
-<td>136,192</td>
-<td>加拿大</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>7</td>
-<td>GB</td>
-<td>SE</td>
-<td>131,328</td>
-<td>英国</td>
-<td>瑞典</td>
-</tr>
-<tr>
-<td>8</td>
-<td>FR</td>
-<td>SE</td>
-<td>131,072</td>
-<td>法国</td>
-<td>瑞典</td>
-</tr>
-<tr>
-<td>9</td>
-<td>IR</td>
-<td>DE</td>
-<td>131,072</td>
-<td>伊朗</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>10</td>
-<td>SE</td>
-<td>US</td>
-<td>131,072</td>
-<td>瑞典</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>11</td>
-<td>AU</td>
-<td>US</td>
-<td>110,848</td>
-<td>澳大利亚</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>12</td>
-<td>JP</td>
-<td>PH</td>
-<td>106,496</td>
-<td>日本</td>
-<td>菲律宾</td>
-</tr>
-<tr>
-<td>13</td>
-<td>US</td>
-<td>DE</td>
-<td>105,728</td>
-<td>美国</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>14</td>
-<td>DE</td>
-<td>FR</td>
-<td>99,584</td>
-<td>德国</td>
-<td>法国</td>
-</tr>
-<tr>
-<td>15</td>
-<td>JP</td>
-<td>SG</td>
-<td>98,304</td>
-<td>日本</td>
-<td>新加坡</td>
-</tr>
-<tr>
-<td>16</td>
-<td>NL</td>
-<td>US</td>
-<td>98,048</td>
-<td>荷兰</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>17</td>
-<td>GB</td>
-<td>ES</td>
-<td>77,824</td>
-<td>英国</td>
-<td>西班牙</td>
-</tr>
-<tr>
-<td>18</td>
-<td>CA</td>
-<td>US</td>
-<td>74,752</td>
-<td>加拿大</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>19</td>
-<td>GB</td>
-<td>DE</td>
-<td>74,496</td>
-<td>英国</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>20</td>
-<td>UA</td>
-<td>US</td>
-<td>70,400</td>
-<td>乌克兰</td>
-<td>美国</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th></th>
+          <th>来源</th>
+          <th>目的</th>
+          <th>转让地址数量（百万）</th>
+          <th>来源经济体名</th>
+          <th>目的经济体名</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>US</td>
+          <td>GB</td>
+          <td>5,389,568</td>
+          <td>美国</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>IT</td>
+          <td>US</td>
+          <td>344,064</td>
+          <td>意大利</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>JP</td>
+          <td>GB</td>
+          <td>329,728</td>
+          <td>日本</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>GB</td>
+          <td>US</td>
+          <td>238,336</td>
+          <td>英国</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>DE</td>
+          <td>GB</td>
+          <td>141,568</td>
+          <td>德国</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>CA</td>
+          <td>GB</td>
+          <td>136,192</td>
+          <td>加拿大</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>GB</td>
+          <td>SE</td>
+          <td>131,328</td>
+          <td>英国</td>
+          <td>瑞典</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>FR</td>
+          <td>SE</td>
+          <td>131,072</td>
+          <td>法国</td>
+          <td>瑞典</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>IR</td>
+          <td>DE</td>
+          <td>131,072</td>
+          <td>伊朗</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>SE</td>
+          <td>US</td>
+          <td>131,072</td>
+          <td>瑞典</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>AU</td>
+          <td>US</td>
+          <td>110,848</td>
+          <td>澳大利亚</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>JP</td>
+          <td>PH</td>
+          <td>106,496</td>
+          <td>日本</td>
+          <td>菲律宾</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>US</td>
+          <td>DE</td>
+          <td>105,728</td>
+          <td>美国</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>DE</td>
+          <td>FR</td>
+          <td>99,584</td>
+          <td>德国</td>
+          <td>法国</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>JP</td>
+          <td>SG</td>
+          <td>98,304</td>
+          <td>日本</td>
+          <td>新加坡</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>NL</td>
+          <td>US</td>
+          <td>98,048</td>
+          <td>荷兰</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>GB</td>
+          <td>ES</td>
+          <td>77,824</td>
+          <td>英国</td>
+          <td>西班牙</td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td>CA</td>
+          <td>US</td>
+          <td>74,752</td>
+          <td>加拿大</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>19</td>
+          <td>GB</td>
+          <td>DE</td>
+          <td>74,496</td>
+          <td>英国</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>20</td>
+          <td>UA</td>
+          <td>US</td>
+          <td>70,400</td>
+          <td>乌克兰</td>
+          <td>美国</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 8 - 2023 年地址数量最多的前二十笔跨经济体转让</p>
 <p>2023 年的转移记录包含了 3,674 次国内地址转移，共涉及 14,314,400 个地址，按地址量计算，英国、美国、荷兰、希腊和日本的国内转移活动最多。有 2,190 次转移似乎导致了地址在不同经济体之间的流动，共涉及 11,001,600 个地址。</p>
 <p>关于这些转让数据，一个悬而未决的问题是，是否所有地址转让都已正式记录在登记系统中。之所以提出这个问题，是因为转让登记需要遵守各种登记政策，导致可能只有一部分转让被记录在登记处中。要检测这种情况可能有些困难，特别是如果这种转让是租赁或其他临时形式，加上当事各方可能同意对转让细节保密。</p>
 <p>通过观察互联网的路由系统，或许可以给出任意时间段内地址转让量的上限。要进一步了解地址转让量的上限是多少，一种方法是对路由系统进行简单的检查，通过比较 2023 年年初和年末的路由稳定状态，查看 2023 年宣告的地址数量（表 9）。</p>
 <table>
-<thead>
-<tr>
-<th></th>
-<th>2023年1月</th>
-<th>2024年1月</th>
-<th>增量</th>
-<th>无变动</th>
-<th>重新归属</th>
-<th>移除</th>
-<th>新增</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>宣告数</td>
-<td>941,707</td>
-<td>944,714</td>
-<td>3,007</td>
-<td>810,902</td>
-<td>25,154</td>
-<td>105,561</td>
-<td>108,658</td>
-</tr>
-<tr>
-<td>地址段数 (/8)</td>
-<td>249.25</td>
-<td>246.94</td>
-<td>-2.32</td>
-<td>232.95</td>
-<td>4.31</td>
-<td>11.99</td>
-<td>9.68</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>顶层前缀数</td>
-<td>444,678</td>
-<td>456,574</td>
-<td>11,896</td>
-<td>396,935</td>
-<td>17,375</td>
-<td>32,054</td>
-<td>42,237</td>
-</tr>
-<tr>
-<td>地址段数 (/8s)</td>
-<td>182.81</td>
-<td>181.51</td>
-<td>-1.30</td>
-<td>174.00</td>
-<td>3.35</td>
-<td>5.99</td>
-<td>4.16</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>细分前缀数</td>
-<td>497,029</td>
-<td>488,167</td>
-<td>-8,862</td>
-<td>413,967</td>
-<td>7,779</td>
-<td>73,597</td>
-<td>66,421</td>
-</tr>
-<tr>
-<td>地址段数 (/8s)</td>
-<td>50.69</td>
-<td>50.48</td>
-<td>-0.21</td>
-<td>58.95</td>
-<td>0.96</td>
-<td>6.01</td>
-<td>5.52</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th></th>
+          <th>2023年1月</th>
+          <th>2024年1月</th>
+          <th>增量</th>
+          <th>无变动</th>
+          <th>重新归属</th>
+          <th>移除</th>
+          <th>新增</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>宣告数</td>
+          <td>941,707</td>
+          <td>944,714</td>
+          <td>3,007</td>
+          <td>810,902</td>
+          <td>25,154</td>
+          <td>105,561</td>
+          <td>108,658</td>
+      </tr>
+      <tr>
+          <td>地址段数 (/8)</td>
+          <td>249.25</td>
+          <td>246.94</td>
+          <td>-2.32</td>
+          <td>232.95</td>
+          <td>4.31</td>
+          <td>11.99</td>
+          <td>9.68</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>顶层前缀数</td>
+          <td>444,678</td>
+          <td>456,574</td>
+          <td>11,896</td>
+          <td>396,935</td>
+          <td>17,375</td>
+          <td>32,054</td>
+          <td>42,237</td>
+      </tr>
+      <tr>
+          <td>地址段数 (/8s)</td>
+          <td>182.81</td>
+          <td>181.51</td>
+          <td>-1.30</td>
+          <td>174.00</td>
+          <td>3.35</td>
+          <td>5.99</td>
+          <td>4.16</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>细分前缀数</td>
+          <td>497,029</td>
+          <td>488,167</td>
+          <td>-8,862</td>
+          <td>413,967</td>
+          <td>7,779</td>
+          <td>73,597</td>
+          <td>66,421</td>
+      </tr>
+      <tr>
+          <td>地址段数 (/8s)</td>
+          <td>50.69</td>
+          <td>50.48</td>
+          <td>-0.21</td>
+          <td>58.95</td>
+          <td>0.96</td>
+          <td>6.01</td>
+          <td>5.52</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 9 - 2023 年 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> IPv4 BGP 变化</p>
 <p>虽然路由表在这一年中净增加了 3,007 个条目，但变化涵盖了不少细节。年初宣告的前缀中，有 105,561 个在年内从路由系统中删除了，而年底宣告前缀中，有 108,658 个在年初时不存在。当然，还有更多短命的前缀可能在全年中增加和撤销（见下段），但这里我们比较的是两个快照，而不是每一条更新信息。还有 25,154 个前缀改变了发布它的自治系统编号 (ASN），这表明该前缀的网络位置以某种方式发生了变化。</p>
 <p>如果我们在某个 BGP 节点（AS131072），查看 2023 年全年看到的 BGP 更新的完整集合，我们会看到很多短命的地址前缀。2023 年共能观察到 1,161,367 个不同的前缀，这意味着和年初的初始前缀集相比，在这一年内的不同时间点，又出现了约 219,660 个额外的前缀。</p>
 <p>我们可以将这些在 2023 年发生变化的前缀与 2022 和 2023 这两年间的 BGP 变动记录进行比较。表 10 显示了这些路由表项数量与这两年间记录的 BGP 变动条目数量的比较。</p>
 <table>
-<thead>
-<tr>
-<th>变动类型</th>
-<th>2023 年发生变化的前缀对应的 BGP 变动</th>
-<th>其它前缀对应的 BGP 变动</th>
-<th>占比</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>重新归属</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>全部前缀数</td>
-<td>2,562</td>
-<td>22,592</td>
-<td>10.2%</td>
-</tr>
-<tr>
-<td>顶层前缀数</td>
-<td>2,291</td>
-<td>14,690</td>
-<td>13.5%</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>移除</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>全部前缀数</td>
-<td>4,556</td>
-<td>101,095</td>
-<td>4.3%</td>
-</tr>
-<tr>
-<td>顶层前缀数</td>
-<td>2,791</td>
-<td>29,263</td>
-<td>8.7%</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>新增</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>全部前缀数</td>
-<td>5,390</td>
-<td>103,268</td>
-<td>5.0%</td>
-</tr>
-<tr>
-<td>顶层前缀数</td>
-<td>3,840</td>
-<td>38,397</td>
-<td>9.1%</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>变动类型</th>
+          <th>2023 年发生变化的前缀对应的 BGP 变动</th>
+          <th>其它前缀对应的 BGP 变动</th>
+          <th>占比</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>重新归属</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>全部前缀数</td>
+          <td>2,562</td>
+          <td>22,592</td>
+          <td>10.2%</td>
+      </tr>
+      <tr>
+          <td>顶层前缀数</td>
+          <td>2,291</td>
+          <td>14,690</td>
+          <td>13.5%</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>移除</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>全部前缀数</td>
+          <td>4,556</td>
+          <td>101,095</td>
+          <td>4.3%</td>
+      </tr>
+      <tr>
+          <td>顶层前缀数</td>
+          <td>2,791</td>
+          <td>29,263</td>
+          <td>8.7%</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>新增</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>全部前缀数</td>
+          <td>5,390</td>
+          <td>103,268</td>
+          <td>5.0%</td>
+      </tr>
+      <tr>
+          <td>顶层前缀数</td>
+          <td>3,840</td>
+          <td>38,397</td>
+          <td>9.1%</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 10 - 2023 年 IPv4 路由表项变化数与 2022-2023 之间 BGP 变动条目数量的比较</p>
 <p>这些数字表明，从年初到年末，4% 到 13% 的宣告地址数量对应了 RIR 记录的地址转让。我们不能说，其余的前缀宣告对应了未记录的地址转让。造成地址前缀宣告变化的原因有很多，地址管理者的变更只是其中潜在的一个。不过，这确实为 2023 年 <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 的地址变动数量设定了一个概念上的上限，其中有些变动与未记录的地址转让有关。</p>
 <p>现在，我们终于可以对 2023 年期间新增、移除和重新归属的地址进行年龄剖析，并将其与路由表中 IPv4 地址的整体年龄剖析进行比较，如图 11 所示。就 2023 年新增的地址而言，由于人们偏向于“较老”的地址，它们与平均年龄分布图有所不同，所有宣告的地址中有 40% 是在 25 年前分配或指派的。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig11-1320x912.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig11-1320x912.png"
-         alt="图 11 - 不同 BGP 路由表项变动类型对应的地址年龄分布"/></a><figcaption>
-            <p>图 11 - 不同 BGP 路由表项变动类型对应的地址年龄分布</p>
-        </figcaption>
+    alt="图 11 - 不同 BGP 路由表项变动类型对应的地址年龄分布"></a><figcaption>
+      <p>图 11 - 不同 BGP 路由表项变动类型对应的地址年龄分布</p>
+    </figcaption>
 </figure>
 
 <p>此外，随着 IPv4 进入最后阶段，我们现在或许可以对 IPv4 地址的总体分布情况进行评估，并看看这些地址的去向。表 11 显示了分配 IPv4 地址最多的十个经济体。不过，我必须指出，地址注册表中国家代号的指配反映的是地址持有者所在的经济体（公司所在地），而不一定是地址所部署到的经济体。</p>
 <table>
-<thead>
-<tr>
-<th>排名</th>
-<th>国家代号</th>
-<th>IPv4 地址池大小</th>
-<th>总体占比</th>
-<th>人均地址数</th>
-<th>经济体</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>US</td>
-<td>1,613,416,288</td>
-<td>43.80%</td>
-<td>4.73</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>2</td>
-<td>CN</td>
-<td>343,128,576</td>
-<td>9.30%</td>
-<td>0.24</td>
-<td>中国</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GB</td>
-<td>125,666,696</td>
-<td>3.40%</td>
-<td>1.85</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>5</td>
-<td>DE</td>
-<td>124,023,296</td>
-<td>3.40%</td>
-<td>1.49</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>6</td>
-<td>KR</td>
-<td>112,502,528</td>
-<td>3.10%</td>
-<td>2.17</td>
-<td>韩国</td>
-</tr>
-<tr>
-<td>7</td>
-<td>BR</td>
-<td>87,131,648</td>
-<td>2.40%</td>
-<td>0.4</td>
-<td>巴西</td>
-</tr>
-<tr>
-<td>8</td>
-<td>FR</td>
-<td>82,154,096</td>
-<td>2.20%</td>
-<td>1.27</td>
-<td>法国</td>
-</tr>
-<tr>
-<td>9</td>
-<td>CA</td>
-<td>68,649,984</td>
-<td>1.90%</td>
-<td>1.76</td>
-<td>加拿大</td>
-</tr>
-<tr>
-<td>10</td>
-<td>IT</td>
-<td>53,993,792</td>
-<td>1.50%</td>
-<td>0.92</td>
-<td>意大利</td>
-</tr>
-<tr>
-<td>总数</td>
-<td>XA</td>
-<td>3,686,113,784</td>
-<td>100.00%</td>
-<td>0.46</td>
-<td>全球</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>排名</th>
+          <th>国家代号</th>
+          <th>IPv4 地址池大小</th>
+          <th>总体占比</th>
+          <th>人均地址数</th>
+          <th>经济体</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>US</td>
+          <td>1,613,416,288</td>
+          <td>43.80%</td>
+          <td>4.73</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>CN</td>
+          <td>343,128,576</td>
+          <td>9.30%</td>
+          <td>0.24</td>
+          <td>中国</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>GB</td>
+          <td>125,666,696</td>
+          <td>3.40%</td>
+          <td>1.85</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>DE</td>
+          <td>124,023,296</td>
+          <td>3.40%</td>
+          <td>1.49</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>KR</td>
+          <td>112,502,528</td>
+          <td>3.10%</td>
+          <td>2.17</td>
+          <td>韩国</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>BR</td>
+          <td>87,131,648</td>
+          <td>2.40%</td>
+          <td>0.4</td>
+          <td>巴西</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>FR</td>
+          <td>82,154,096</td>
+          <td>2.20%</td>
+          <td>1.27</td>
+          <td>法国</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>CA</td>
+          <td>68,649,984</td>
+          <td>1.90%</td>
+          <td>1.76</td>
+          <td>加拿大</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>IT</td>
+          <td>53,993,792</td>
+          <td>1.50%</td>
+          <td>0.92</td>
+          <td>意大利</td>
+      </tr>
+      <tr>
+          <td>总数</td>
+          <td>XA</td>
+          <td>3,686,113,784</td>
+          <td>100.00%</td>
+          <td>0.46</td>
+          <td>全球</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 11 - 各国家经济体 IPv4 分配地址池大小</p>
 <p>如果我们将地址池除以每个国家的现有人口数，就可以得出人均地址排名。全球已分配地址总数为 36.9 亿，而全球人口估计为 80 亿，因此人均 IPv4 地址数量为 0.46。</p>
 <table>
-<thead>
-<tr>
-<th>排名</th>
-<th>国家代号</th>
-<th>IPv4 地址池大小</th>
-<th>总体占比</th>
-<th>人均地址数</th>
-<th>经济体</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>SC</td>
-<td>7,284,480</td>
-<td>0.20%</td>
-<td>67.46</td>
-<td>塞舌尔</td>
-</tr>
-<tr>
-<td>2</td>
-<td>VA</td>
-<td>10,752</td>
-<td>0.00%</td>
-<td>20.6</td>
-<td>教廷</td>
-</tr>
-<tr>
-<td>3</td>
-<td>GI</td>
-<td>239,104</td>
-<td>0.00%</td>
-<td>7.31</td>
-<td>直布罗陀</td>
-</tr>
-<tr>
-<td>4</td>
-<td>US</td>
-<td>1,613,416,288</td>
-<td>43.80%</td>
-<td>4.73</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>5</td>
-<td>SG</td>
-<td>26,087,936</td>
-<td>0.70%</td>
-<td>4.32</td>
-<td>新加坡</td>
-</tr>
-<tr>
-<td>6</td>
-<td>MU</td>
-<td>4,779,008</td>
-<td>0.10%</td>
-<td>3.67</td>
-<td>毛里求斯</td>
-</tr>
-<tr>
-<td>7</td>
-<td>CH</td>
-<td>25,955,896</td>
-<td>0.70%</td>
-<td>2.94</td>
-<td>瑞士</td>
-</tr>
-<tr>
-<td>8</td>
-<td>VG</td>
-<td>92,160</td>
-<td>0.00%</td>
-<td>2.91</td>
-<td>英属维尔京群岛</td>
-</tr>
-<tr>
-<td>9</td>
-<td>NO</td>
-<td>15,537,680</td>
-<td>0.40%</td>
-<td>2.83</td>
-<td>挪威</td>
-</tr>
-<tr>
-<td>10</td>
-<td>NL</td>
-<td>49,889,568</td>
-<td>1.40%</td>
-<td>2.83</td>
-<td>荷兰</td>
-</tr>
-<tr>
-<td>总数</td>
-<td>XA</td>
-<td>3,686,113,784</td>
-<td>100.00%</td>
-<td>0.46</td>
-<td>全球</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>排名</th>
+          <th>国家代号</th>
+          <th>IPv4 地址池大小</th>
+          <th>总体占比</th>
+          <th>人均地址数</th>
+          <th>经济体</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>SC</td>
+          <td>7,284,480</td>
+          <td>0.20%</td>
+          <td>67.46</td>
+          <td>塞舌尔</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>VA</td>
+          <td>10,752</td>
+          <td>0.00%</td>
+          <td>20.6</td>
+          <td>教廷</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>GI</td>
+          <td>239,104</td>
+          <td>0.00%</td>
+          <td>7.31</td>
+          <td>直布罗陀</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>US</td>
+          <td>1,613,416,288</td>
+          <td>43.80%</td>
+          <td>4.73</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>SG</td>
+          <td>26,087,936</td>
+          <td>0.70%</td>
+          <td>4.32</td>
+          <td>新加坡</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>MU</td>
+          <td>4,779,008</td>
+          <td>0.10%</td>
+          <td>3.67</td>
+          <td>毛里求斯</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>CH</td>
+          <td>25,955,896</td>
+          <td>0.70%</td>
+          <td>2.94</td>
+          <td>瑞士</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>VG</td>
+          <td>92,160</td>
+          <td>0.00%</td>
+          <td>2.91</td>
+          <td>英属维尔京群岛</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>NO</td>
+          <td>15,537,680</td>
+          <td>0.40%</td>
+          <td>2.83</td>
+          <td>挪威</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>NL</td>
+          <td>49,889,568</td>
+          <td>1.40%</td>
+          <td>2.83</td>
+          <td>荷兰</td>
+      </tr>
+      <tr>
+          <td>总数</td>
+          <td>XA</td>
+          <td>3,686,113,784</td>
+          <td>100.00%</td>
+          <td>0.46</td>
+          <td>全球</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 12 - 各国家经济体 IPv4 分配地址池大小，按人均地址数排名</p>
 <p><a href="https://resources.potaroo.net/iso3166/v4cc.html">这里</a>可以查看每个国家经济体 IPv4 分配情况的完整表格。</p>
@@ -1422,963 +1424,963 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>因此对于 IPv6，让我们同时使用 IPv6 分配次数和分配的空间总量，看看 IPv6 在 2023 年的表现如何。</p>
 <p>与 2022 年相比，2023 年IPv6 地址空间的分配次数下降了 5%，而 IPv4 分配次数下降了 21%（表 13）。</p>
 <table>
-<thead>
-<tr>
-<th>分配次数</th>
-<th>2011</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IPv6</td>
-<td>3,582</td>
-<td>3,291</td>
-<td>3,529</td>
-<td>4,502</td>
-<td>4,644</td>
-<td>5,567</td>
-<td>5,740</td>
-<td>6,176</td>
-<td>6,799</td>
-<td>5,376</td>
-<td>5,350</td>
-<td>4,066</td>
-<td>3,874</td>
-</tr>
-<tr>
-<td>IPv4</td>
-<td>8,234</td>
-<td>7,435</td>
-<td>6,429</td>
-<td>10,435</td>
-<td>11,352</td>
-<td>9,648</td>
-<td>8,185</td>
-<td>8,769</td>
-<td>12,560</td>
-<td>5,874</td>
-<td>6,939</td>
-<td>4,395</td>
-<td>3,462</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>分配次数</th>
+          <th>2011</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>IPv6</td>
+          <td>3,582</td>
+          <td>3,291</td>
+          <td>3,529</td>
+          <td>4,502</td>
+          <td>4,644</td>
+          <td>5,567</td>
+          <td>5,740</td>
+          <td>6,176</td>
+          <td>6,799</td>
+          <td>5,376</td>
+          <td>5,350</td>
+          <td>4,066</td>
+          <td>3,874</td>
+      </tr>
+      <tr>
+          <td>IPv4</td>
+          <td>8,234</td>
+          <td>7,435</td>
+          <td>6,429</td>
+          <td>10,435</td>
+          <td>11,352</td>
+          <td>9,648</td>
+          <td>8,185</td>
+          <td>8,769</td>
+          <td>12,560</td>
+          <td>5,874</td>
+          <td>6,939</td>
+          <td>4,395</td>
+          <td>3,462</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 13 - 2011-2023 地址分配次数比较</p>
 <p>2023 年分配的 IPv6 地址空间比 2022 年增长了 170%<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>，而相应的 IPv4 地址空间则减少了 24%（表 14）。</p>
 <table>
-<thead>
-<tr>
-<th>分配地址数</th>
-<th>2011</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IPv6 （/32）</td>
-<td>14,986</td>
-<td>17,710</td>
-<td>23,642</td>
-<td>17,847</td>
-<td>15,765</td>
-<td>25,260</td>
-<td>19,975</td>
-<td>38,699</td>
-<td>35,924</td>
-<td>21,620</td>
-<td>28,131</td>
-<td>27,497</td>
-<td>74,159</td>
-</tr>
-<tr>
-<td>IPv4 （/32，百万）</td>
-<td>191.7</td>
-<td>88.8</td>
-<td>57.7</td>
-<td>58.8</td>
-<td>32.3</td>
-<td>20.8</td>
-<td>15.1</td>
-<td>14.1</td>
-<td>13.9</td>
-<td>4.2</td>
-<td>3.1</td>
-<td>2.1</td>
-<td>1.6</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>分配地址数</th>
+          <th>2011</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>IPv6 （/32）</td>
+          <td>14,986</td>
+          <td>17,710</td>
+          <td>23,642</td>
+          <td>17,847</td>
+          <td>15,765</td>
+          <td>25,260</td>
+          <td>19,975</td>
+          <td>38,699</td>
+          <td>35,924</td>
+          <td>21,620</td>
+          <td>28,131</td>
+          <td>27,497</td>
+          <td>74,159</td>
+      </tr>
+      <tr>
+          <td>IPv4 （/32，百万）</td>
+          <td>191.7</td>
+          <td>88.8</td>
+          <td>57.7</td>
+          <td>58.8</td>
+          <td>32.3</td>
+          <td>20.8</td>
+          <td>15.1</td>
+          <td>14.1</td>
+          <td>13.9</td>
+          <td>4.2</td>
+          <td>3.1</td>
+          <td>2.1</td>
+          <td>1.6</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 14 - 2011-2023 地址分配地址数比较</p>
 <p>按地区来看，每个 RIR 在 2023 年的 IPv6 分配活动与 2022 年相当，但远低于 2018 年至 2019 年的 IPv6 分配活动高峰期（表 15）。</p>
 <table>
-<thead>
-<tr>
-<th>分配次数</th>
-<th>2011</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Allocations</td>
-<td>2011</td>
-<td>2012</td>
-<td>2013</td>
-<td>2014</td>
-<td>2015</td>
-<td>2016</td>
-<td>2017</td>
-<td>2018</td>
-<td>2019</td>
-<td>2020</td>
-<td>2021</td>
-<td>2022</td>
-<td>2023</td>
-</tr>
-<tr>
-<td>AFRINIC</td>
-<td>129</td>
-<td>82</td>
-<td>72</td>
-<td>59</td>
-<td>81</td>
-<td>111</td>
-<td>110</td>
-<td>108</td>
-<td>111</td>
-<td>108</td>
-<td>135</td>
-<td>151</td>
-<td>115</td>
-</tr>
-<tr>
-<td>APNIC</td>
-<td>641</td>
-<td>599</td>
-<td>540</td>
-<td>528</td>
-<td>777</td>
-<td>1,680</td>
-<td>1,369</td>
-<td>1,460</td>
-<td>1,484</td>
-<td>1,498</td>
-<td>1,392</td>
-<td>1,317</td>
-<td>1,381</td>
-</tr>
-<tr>
-<td>ARIN</td>
-<td>1,035</td>
-<td>603</td>
-<td>543</td>
-<td>489</td>
-<td>604</td>
-<td>645</td>
-<td>684</td>
-<td>648</td>
-<td>601</td>
-<td>644</td>
-<td>668</td>
-<td>680</td>
-<td>712</td>
-</tr>
-<tr>
-<td>LACNIC</td>
-<td>130</td>
-<td>251</td>
-<td>223</td>
-<td>1,199</td>
-<td>1,053</td>
-<td>1,007</td>
-<td>1,547</td>
-<td>1,439</td>
-<td>1,614</td>
-<td>1,801</td>
-<td>725</td>
-<td>635</td>
-<td>612</td>
-</tr>
-<tr>
-<td>RIPENCC</td>
-<td>1,647</td>
-<td>1,756</td>
-<td>2,151</td>
-<td>2,227</td>
-<td>2,129</td>
-<td>2,124</td>
-<td>2,030</td>
-<td>2,521</td>
-<td>2,989</td>
-<td>1,325</td>
-<td>2,430</td>
-<td>1,283</td>
-<td>1,054</td>
-</tr>
-<tr>
-<td>Total</td>
-<td>3,582</td>
-<td>3,291</td>
-<td>3,529</td>
-<td>4,502</td>
-<td>4,644</td>
-<td>5,567</td>
-<td>5,740</td>
-<td>6,176</td>
-<td>6,799</td>
-<td>5,376</td>
-<td>5,350</td>
-<td>4,066</td>
-<td>3,874</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>分配次数</th>
+          <th>2011</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Allocations</td>
+          <td>2011</td>
+          <td>2012</td>
+          <td>2013</td>
+          <td>2014</td>
+          <td>2015</td>
+          <td>2016</td>
+          <td>2017</td>
+          <td>2018</td>
+          <td>2019</td>
+          <td>2020</td>
+          <td>2021</td>
+          <td>2022</td>
+          <td>2023</td>
+      </tr>
+      <tr>
+          <td>AFRINIC</td>
+          <td>129</td>
+          <td>82</td>
+          <td>72</td>
+          <td>59</td>
+          <td>81</td>
+          <td>111</td>
+          <td>110</td>
+          <td>108</td>
+          <td>111</td>
+          <td>108</td>
+          <td>135</td>
+          <td>151</td>
+          <td>115</td>
+      </tr>
+      <tr>
+          <td>APNIC</td>
+          <td>641</td>
+          <td>599</td>
+          <td>540</td>
+          <td>528</td>
+          <td>777</td>
+          <td>1,680</td>
+          <td>1,369</td>
+          <td>1,460</td>
+          <td>1,484</td>
+          <td>1,498</td>
+          <td>1,392</td>
+          <td>1,317</td>
+          <td>1,381</td>
+      </tr>
+      <tr>
+          <td>ARIN</td>
+          <td>1,035</td>
+          <td>603</td>
+          <td>543</td>
+          <td>489</td>
+          <td>604</td>
+          <td>645</td>
+          <td>684</td>
+          <td>648</td>
+          <td>601</td>
+          <td>644</td>
+          <td>668</td>
+          <td>680</td>
+          <td>712</td>
+      </tr>
+      <tr>
+          <td>LACNIC</td>
+          <td>130</td>
+          <td>251</td>
+          <td>223</td>
+          <td>1,199</td>
+          <td>1,053</td>
+          <td>1,007</td>
+          <td>1,547</td>
+          <td>1,439</td>
+          <td>1,614</td>
+          <td>1,801</td>
+          <td>725</td>
+          <td>635</td>
+          <td>612</td>
+      </tr>
+      <tr>
+          <td>RIPENCC</td>
+          <td>1,647</td>
+          <td>1,756</td>
+          <td>2,151</td>
+          <td>2,227</td>
+          <td>2,129</td>
+          <td>2,124</td>
+          <td>2,030</td>
+          <td>2,521</td>
+          <td>2,989</td>
+          <td>1,325</td>
+          <td>2,430</td>
+          <td>1,283</td>
+          <td>1,054</td>
+      </tr>
+      <tr>
+          <td>Total</td>
+          <td>3,582</td>
+          <td>3,291</td>
+          <td>3,529</td>
+          <td>4,502</td>
+          <td>4,644</td>
+          <td>5,567</td>
+          <td>5,740</td>
+          <td>6,176</td>
+          <td>6,799</td>
+          <td>5,376</td>
+          <td>5,350</td>
+          <td>4,066</td>
+          <td>3,874</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 15 - 各 RIR 的地址分配次数</p>
 <p>地址分配数则略有不同。表 16 显示了每年分配的 IPv6 /32 数量。2023 年，APNIC 分配的 IPv6 地址数量明显低于 2022 年，LACNIC 和 RIPE NCC 地区的分配数量也略低于 2022 年。ARIN 向 Capital One Financial Cooperation 分配了一个 /16 地址块，Capital One Financial Cooperation 是美国大银行之一，在零售领域拥有大量信用卡用户。</p>
 <table>
-<thead>
-<tr>
-<th>分配地址数（/32）</th>
-<th>2011</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AFRINIC</td>
-<td>155</td>
-<td>4,201</td>
-<td>66</td>
-<td>48</td>
-<td>308</td>
-<td>76</td>
-<td>112</td>
-<td>71</td>
-<td>360</td>
-<td>88</td>
-<td>141</td>
-<td>387</td>
-<td>400</td>
-</tr>
-<tr>
-<td>APNIC</td>
-<td>9,506</td>
-<td>3,807</td>
-<td>4,462</td>
-<td>2,663</td>
-<td>2,108</td>
-<td>1,235</td>
-<td>4,228</td>
-<td>19,681</td>
-<td>7,945</td>
-<td>7,365</td>
-<td>10,185</td>
-<td>4,856</td>
-<td>599</td>
-</tr>
-<tr>
-<td>ARIN</td>
-<td>2,280</td>
-<td>1,672</td>
-<td>12,571</td>
-<td>5,214</td>
-<td>642</td>
-<td>1,087</td>
-<td>1,372</td>
-<td>844</td>
-<td>5,520</td>
-<td>4,975</td>
-<td>373</td>
-<td>13,695</td>
-<td>66,340</td>
-</tr>
-<tr>
-<td>LACNIC</td>
-<td>620</td>
-<td>4,301</td>
-<td>158</td>
-<td>1,314</td>
-<td>953</td>
-<td>1,173</td>
-<td>1,427</td>
-<td>1,327</td>
-<td>1,496</td>
-<td>1,669</td>
-<td>658</td>
-<td>563</td>
-<td>467</td>
-</tr>
-<tr>
-<td>RIPENCC</td>
-<td>2,425</td>
-<td>3,729</td>
-<td>6,385</td>
-<td>8,608</td>
-<td>11,754</td>
-<td>21,689</td>
-<td>12,836</td>
-<td>16,776</td>
-<td>20,603</td>
-<td>7,523</td>
-<td>16,774</td>
-<td>7,996</td>
-<td>6,353</td>
-</tr>
-<tr>
-<td>Total</td>
-<td>14,986</td>
-<td>17,710</td>
-<td>23,642</td>
-<td>17,847</td>
-<td>15,765</td>
-<td>25,260</td>
-<td>19,975</td>
-<td>38,699</td>
-<td>35,924</td>
-<td>21,620</td>
-<td>28,131</td>
-<td>27,497</td>
-<td>74,159</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>分配地址数（/32）</th>
+          <th>2011</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>AFRINIC</td>
+          <td>155</td>
+          <td>4,201</td>
+          <td>66</td>
+          <td>48</td>
+          <td>308</td>
+          <td>76</td>
+          <td>112</td>
+          <td>71</td>
+          <td>360</td>
+          <td>88</td>
+          <td>141</td>
+          <td>387</td>
+          <td>400</td>
+      </tr>
+      <tr>
+          <td>APNIC</td>
+          <td>9,506</td>
+          <td>3,807</td>
+          <td>4,462</td>
+          <td>2,663</td>
+          <td>2,108</td>
+          <td>1,235</td>
+          <td>4,228</td>
+          <td>19,681</td>
+          <td>7,945</td>
+          <td>7,365</td>
+          <td>10,185</td>
+          <td>4,856</td>
+          <td>599</td>
+      </tr>
+      <tr>
+          <td>ARIN</td>
+          <td>2,280</td>
+          <td>1,672</td>
+          <td>12,571</td>
+          <td>5,214</td>
+          <td>642</td>
+          <td>1,087</td>
+          <td>1,372</td>
+          <td>844</td>
+          <td>5,520</td>
+          <td>4,975</td>
+          <td>373</td>
+          <td>13,695</td>
+          <td>66,340</td>
+      </tr>
+      <tr>
+          <td>LACNIC</td>
+          <td>620</td>
+          <td>4,301</td>
+          <td>158</td>
+          <td>1,314</td>
+          <td>953</td>
+          <td>1,173</td>
+          <td>1,427</td>
+          <td>1,327</td>
+          <td>1,496</td>
+          <td>1,669</td>
+          <td>658</td>
+          <td>563</td>
+          <td>467</td>
+      </tr>
+      <tr>
+          <td>RIPENCC</td>
+          <td>2,425</td>
+          <td>3,729</td>
+          <td>6,385</td>
+          <td>8,608</td>
+          <td>11,754</td>
+          <td>21,689</td>
+          <td>12,836</td>
+          <td>16,776</td>
+          <td>20,603</td>
+          <td>7,523</td>
+          <td>16,774</td>
+          <td>7,996</td>
+          <td>6,353</td>
+      </tr>
+      <tr>
+          <td>Total</td>
+          <td>14,986</td>
+          <td>17,710</td>
+          <td>23,642</td>
+          <td>17,847</td>
+          <td>15,765</td>
+          <td>25,260</td>
+          <td>19,975</td>
+          <td>38,699</td>
+          <td>35,924</td>
+          <td>21,620</td>
+          <td>28,131</td>
+          <td>27,497</td>
+          <td>74,159</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 16 - 各 RIR 的地址分配数量</p>
 <p>将地址除以分配次数，就得出了各地区的平均 IPv6 分配规模（表 17）。总体而言，平均 IPv6 分配规模为 /28，RIPE NCC 和 ARIN 的平均分配规模大于其他 RIR。</p>
 <table>
-<thead>
-<tr>
-<th></th>
-<th>2011</th>
-<th>2012</th>
-<th>2013</th>
-<th>2014</th>
-<th>2015</th>
-<th>2016</th>
-<th>2017</th>
-<th>2018</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AFRINIC</td>
-<td>/31.7</td>
-<td>/26.3</td>
-<td>/32.1</td>
-<td>/32.3</td>
-<td>/30.1</td>
-<td>/32.5</td>
-<td>/32.0</td>
-<td>/32.6</td>
-<td>/30.3</td>
-<td>/32.3</td>
-<td>/31.9</td>
-<td>/30.6</td>
-<td>/30.2</td>
-</tr>
-<tr>
-<td>APNIC</td>
-<td>/28.1</td>
-<td>/29.3</td>
-<td>/29.0</td>
-<td>/29.7</td>
-<td>/30.6</td>
-<td>/32.4</td>
-<td>/30.4</td>
-<td>/28.2</td>
-<td>/29.6</td>
-<td>/29.7</td>
-<td>/29.1</td>
-<td>/30.1</td>
-<td>/33.2</td>
-</tr>
-<tr>
-<td>ARIN</td>
-<td>/30.9</td>
-<td>/30.5</td>
-<td>/27.5</td>
-<td>/28.6</td>
-<td>/31.9</td>
-<td>/31.2</td>
-<td>/31.0</td>
-<td>/31.6</td>
-<td>/28.8</td>
-<td>/29.1</td>
-<td>/32.8</td>
-<td>/27.7</td>
-<td>/25.5</td>
-</tr>
-<tr>
-<td>LACNIC</td>
-<td>/29.7</td>
-<td>/27.9</td>
-<td>/32.5</td>
-<td>/31.9</td>
-<td>/32.1</td>
-<td>/31.8</td>
-<td>/32.1</td>
-<td>/32.1</td>
-<td>/32.1</td>
-<td>/32.1</td>
-<td>/32.1</td>
-<td>/32.2</td>
-<td>/32.4</td>
-</tr>
-<tr>
-<td>RIPENCC</td>
-<td>/31.4</td>
-<td>/30.9</td>
-<td>/30.4</td>
-<td>/30.0</td>
-<td>/29.5</td>
-<td>/28.6</td>
-<td>/29.3</td>
-<td>/29.3</td>
-<td>/29.2</td>
-<td>/29.5</td>
-<td>/29.2</td>
-<td>/29.4</td>
-<td>/29.4</td>
-</tr>
-<tr>
-<td>Average</td>
-<td>/29.9</td>
-<td>/29.6</td>
-<td>/29.3</td>
-<td>/30.0</td>
-<td>/30.2</td>
-<td>/29.8</td>
-<td>/30.2</td>
-<td>/29.4</td>
-<td>/29.6</td>
-<td>/30.0</td>
-<td>/29.6</td>
-<td>/29.2</td>
-<td>/27.7</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th></th>
+          <th>2011</th>
+          <th>2012</th>
+          <th>2013</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>AFRINIC</td>
+          <td>/31.7</td>
+          <td>/26.3</td>
+          <td>/32.1</td>
+          <td>/32.3</td>
+          <td>/30.1</td>
+          <td>/32.5</td>
+          <td>/32.0</td>
+          <td>/32.6</td>
+          <td>/30.3</td>
+          <td>/32.3</td>
+          <td>/31.9</td>
+          <td>/30.6</td>
+          <td>/30.2</td>
+      </tr>
+      <tr>
+          <td>APNIC</td>
+          <td>/28.1</td>
+          <td>/29.3</td>
+          <td>/29.0</td>
+          <td>/29.7</td>
+          <td>/30.6</td>
+          <td>/32.4</td>
+          <td>/30.4</td>
+          <td>/28.2</td>
+          <td>/29.6</td>
+          <td>/29.7</td>
+          <td>/29.1</td>
+          <td>/30.1</td>
+          <td>/33.2</td>
+      </tr>
+      <tr>
+          <td>ARIN</td>
+          <td>/30.9</td>
+          <td>/30.5</td>
+          <td>/27.5</td>
+          <td>/28.6</td>
+          <td>/31.9</td>
+          <td>/31.2</td>
+          <td>/31.0</td>
+          <td>/31.6</td>
+          <td>/28.8</td>
+          <td>/29.1</td>
+          <td>/32.8</td>
+          <td>/27.7</td>
+          <td>/25.5</td>
+      </tr>
+      <tr>
+          <td>LACNIC</td>
+          <td>/29.7</td>
+          <td>/27.9</td>
+          <td>/32.5</td>
+          <td>/31.9</td>
+          <td>/32.1</td>
+          <td>/31.8</td>
+          <td>/32.1</td>
+          <td>/32.1</td>
+          <td>/32.1</td>
+          <td>/32.1</td>
+          <td>/32.1</td>
+          <td>/32.2</td>
+          <td>/32.4</td>
+      </tr>
+      <tr>
+          <td>RIPENCC</td>
+          <td>/31.4</td>
+          <td>/30.9</td>
+          <td>/30.4</td>
+          <td>/30.0</td>
+          <td>/29.5</td>
+          <td>/28.6</td>
+          <td>/29.3</td>
+          <td>/29.3</td>
+          <td>/29.2</td>
+          <td>/29.5</td>
+          <td>/29.2</td>
+          <td>/29.4</td>
+          <td>/29.4</td>
+      </tr>
+      <tr>
+          <td>Average</td>
+          <td>/29.9</td>
+          <td>/29.6</td>
+          <td>/29.3</td>
+          <td>/30.0</td>
+          <td>/30.2</td>
+          <td>/29.8</td>
+          <td>/30.2</td>
+          <td>/29.4</td>
+          <td>/29.6</td>
+          <td>/30.0</td>
+          <td>/29.6</td>
+          <td>/29.2</td>
+          <td>/27.7</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 17 - 各 RIR 的单次平均地址分配数量</p>
 <p>图 12 和图 13 显示了每个区域互联网注册管理机构每年 IPv6 分配的次数和地址量。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig12.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig12.png"
-         alt="图 12 - 每年 IPv6 地址分配次数"/></a><figcaption>
-            <p>图 12 - 每年 IPv6 地址分配次数</p>
-        </figcaption>
+    alt="图 12 - 每年 IPv6 地址分配次数"></a><figcaption>
+      <p>图 12 - 每年 IPv6 地址分配次数</p>
+    </figcaption>
 </figure>
 
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig13.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig13.png"
-         alt="图 13 - 每年 IPv6 地址分配数量"/></a><figcaption>
-            <p>图 13 - 每年 IPv6 地址分配数量</p>
-        </figcaption>
+    alt="图 13 - 每年 IPv6 地址分配数量"></a><figcaption>
+      <p>图 13 - 每年 IPv6 地址分配数量</p>
+    </figcaption>
 </figure>
 
 <p>或许我们可以将 RIPE NCC 2020 年 IPv6 分配量的下降归因于当年许多欧洲经济体受 COVID-19 措施的严重打击。与之相反的观点是，世界各地的经济体都受到了类似的影响，但 2020 年 IPv6 分配活动的下降却只出现在 RIPE NCC 的数据中。不过，为什么欧洲经济体的 IPv6 地址分配活动会下滑（表 18 和表 19），确实是一个有趣的问题。</p>
 <table>
-<thead>
-<tr>
-<th>Rank</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>巴西</td>
-<td>1,112</td>
-<td>巴西</td>
-<td>1,394</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>2</td>
-<td>美国</td>
-<td>538</td>
-<td>美国</td>
-<td>588</td>
-<td>俄罗斯</td>
-</tr>
-<tr>
-<td>3</td>
-<td>俄罗斯</td>
-<td>502</td>
-<td>印度尼西亚</td>
-<td>389</td>
-<td>巴西</td>
-</tr>
-<tr>
-<td>4</td>
-<td>德国</td>
-<td>407</td>
-<td>印度</td>
-<td>226</td>
-<td>荷兰</td>
-</tr>
-<tr>
-<td>5</td>
-<td>印度尼西亚</td>
-<td>366</td>
-<td>荷兰</td>
-<td>199</td>
-<td>印度</td>
-</tr>
-<tr>
-<td>6</td>
-<td>荷兰</td>
-<td>342</td>
-<td>德国</td>
-<td>192</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>7</td>
-<td>英国</td>
-<td>223</td>
-<td>孟加拉国</td>
-<td>182</td>
-<td>孟加拉国</td>
-</tr>
-<tr>
-<td>8</td>
-<td>孟加拉国</td>
-<td>202</td>
-<td>俄罗斯</td>
-<td>128</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>9</td>
-<td>法国</td>
-<td>179</td>
-<td>澳大利亚</td>
-<td>118</td>
-<td>印度尼西亚</td>
-</tr>
-<tr>
-<td>10</td>
-<td>中国</td>
-<td>165</td>
-<td>中国</td>
-<td>115</td>
-<td>香港</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Rank</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>巴西</td>
+          <td>1,112</td>
+          <td>巴西</td>
+          <td>1,394</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>美国</td>
+          <td>538</td>
+          <td>美国</td>
+          <td>588</td>
+          <td>俄罗斯</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>俄罗斯</td>
+          <td>502</td>
+          <td>印度尼西亚</td>
+          <td>389</td>
+          <td>巴西</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>德国</td>
+          <td>407</td>
+          <td>印度</td>
+          <td>226</td>
+          <td>荷兰</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>印度尼西亚</td>
+          <td>366</td>
+          <td>荷兰</td>
+          <td>199</td>
+          <td>印度</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>荷兰</td>
+          <td>342</td>
+          <td>德国</td>
+          <td>192</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>英国</td>
+          <td>223</td>
+          <td>孟加拉国</td>
+          <td>182</td>
+          <td>孟加拉国</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>孟加拉国</td>
+          <td>202</td>
+          <td>俄罗斯</td>
+          <td>128</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>法国</td>
+          <td>179</td>
+          <td>澳大利亚</td>
+          <td>118</td>
+          <td>印度尼西亚</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>中国</td>
+          <td>165</td>
+          <td>中国</td>
+          <td>115</td>
+          <td>香港</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 18 - 各经济体每年的 IPv6 地址分配次数</p>
 <p>这两个表格是过去五年按经济体的划分，表 18 显示了获得 IPv6 分配次数最多的经济体，而表 19 则显示了每个经济体获得分配的 IPv6 地址空间数量（使用 /32 为单位）。</p>
 <table>
-<thead>
-<tr>
-<th>Rank</th>
-<th>2019</th>
-<th>2020</th>
-<th>2021</th>
-<th>2022</th>
-<th>2023</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>中国</td>
-<td>6,787</td>
-<td>中国</td>
-<td>6,765</td>
-<td>中国</td>
-</tr>
-<tr>
-<td>2</td>
-<td>美国</td>
-<td>5,510</td>
-<td>美国</td>
-<td>5,051</td>
-<td>俄罗斯</td>
-</tr>
-<tr>
-<td>3</td>
-<td>俄罗斯</td>
-<td>3,716</td>
-<td>巴西</td>
-<td>1,358</td>
-<td>印度</td>
-</tr>
-<tr>
-<td>4</td>
-<td>德国</td>
-<td>2,522</td>
-<td>荷兰</td>
-<td>1,331</td>
-<td>荷兰</td>
-</tr>
-<tr>
-<td>5</td>
-<td>荷兰</td>
-<td>2,516</td>
-<td>德国</td>
-<td>716</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>6</td>
-<td>英国</td>
-<td>1,355</td>
-<td>俄罗斯</td>
-<td>715</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>7</td>
-<td>法国</td>
-<td>1,182</td>
-<td>英国</td>
-<td>552</td>
-<td>乌克兰</td>
-</tr>
-<tr>
-<td>8</td>
-<td>意大利</td>
-<td>1,052</td>
-<td>意大利</td>
-<td>391</td>
-<td>立陶宛</td>
-</tr>
-<tr>
-<td>9</td>
-<td>巴西</td>
-<td>1,049</td>
-<td>法国</td>
-<td>390</td>
-<td>巴西</td>
-</tr>
-<tr>
-<td>10</td>
-<td>西班牙</td>
-<td>854</td>
-<td>土耳其</td>
-<td>290</td>
-<td>美国</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Rank</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>中国</td>
+          <td>6,787</td>
+          <td>中国</td>
+          <td>6,765</td>
+          <td>中国</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>美国</td>
+          <td>5,510</td>
+          <td>美国</td>
+          <td>5,051</td>
+          <td>俄罗斯</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>俄罗斯</td>
+          <td>3,716</td>
+          <td>巴西</td>
+          <td>1,358</td>
+          <td>印度</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>德国</td>
+          <td>2,522</td>
+          <td>荷兰</td>
+          <td>1,331</td>
+          <td>荷兰</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>荷兰</td>
+          <td>2,516</td>
+          <td>德国</td>
+          <td>716</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>英国</td>
+          <td>1,355</td>
+          <td>俄罗斯</td>
+          <td>715</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>法国</td>
+          <td>1,182</td>
+          <td>英国</td>
+          <td>552</td>
+          <td>乌克兰</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>意大利</td>
+          <td>1,052</td>
+          <td>意大利</td>
+          <td>391</td>
+          <td>立陶宛</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>巴西</td>
+          <td>1,049</td>
+          <td>法国</td>
+          <td>390</td>
+          <td>巴西</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>西班牙</td>
+          <td>854</td>
+          <td>土耳其</td>
+          <td>290</td>
+          <td>美国</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 19 - 各经济体每年的 IPv6 地址分配数量</p>
 <p>我们还可以查看前 25 个获得最多 IPv6 分配的地址数量的经济体（表 20）。</p>
 <table>
-<thead>
-<tr>
-<th>排名</th>
-<th>国家代号</th>
-<th>地址分配数（/48）</th>
-<th>总体占比</th>
-<th>人均地址数量（/48）</th>
-<th>宣告前缀数量（/48）</th>
-<th>实际部署比例</th>
-<th>经济体名</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>US</td>
-<td>9,126,192,440</td>
-<td>31.30%</td>
-<td>26.8</td>
-<td>1,399,113,308</td>
-<td>13.80%</td>
-<td>美国</td>
-</tr>
-<tr>
-<td>2</td>
-<td>CN</td>
-<td>4,220,731,486</td>
-<td>14.50%</td>
-<td>3</td>
-<td>1,665,240,127</td>
-<td>16.40%</td>
-<td>中国</td>
-</tr>
-<tr>
-<td>3</td>
-<td>DE</td>
-<td>1,567,556,343</td>
-<td>5.40%</td>
-<td>18.8</td>
-<td>1,067,282,327</td>
-<td>10.50%</td>
-<td>德国</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GB</td>
-<td>1,508,704,744</td>
-<td>5.20%</td>
-<td>22.2</td>
-<td>468,594,870</td>
-<td>4.60%</td>
-<td>英国</td>
-</tr>
-<tr>
-<td>5</td>
-<td>FR</td>
-<td>983,511,453</td>
-<td>3.40%</td>
-<td>15.2</td>
-<td>181,849,911</td>
-<td>1.80%</td>
-<td>法国</td>
-</tr>
-<tr>
-<td>6</td>
-<td>RU</td>
-<td>896,401,723</td>
-<td>3.10%</td>
-<td>6.2</td>
-<td>196,222,375</td>
-<td>1.90%</td>
-<td>俄罗斯</td>
-</tr>
-<tr>
-<td>7</td>
-<td>NL</td>
-<td>774,635,835</td>
-<td>2.70%</td>
-<td>43.9</td>
-<td>328,258,068</td>
-<td>3.20%</td>
-<td>荷兰</td>
-</tr>
-<tr>
-<td>8</td>
-<td>IT</td>
-<td>689,770,536</td>
-<td>2.40%</td>
-<td>11.7</td>
-<td>426,414,680</td>
-<td>4.20%</td>
-<td>意大利</td>
-</tr>
-<tr>
-<td>9</td>
-<td>JP</td>
-<td>665,723,093</td>
-<td>2.30%</td>
-<td>5.4</td>
-<td>510,861,733</td>
-<td>5.00%</td>
-<td>日本</td>
-</tr>
-<tr>
-<td>10</td>
-<td>AU</td>
-<td>622,396,680</td>
-<td>2.10%</td>
-<td>23.4</td>
-<td>309,895,455</td>
-<td>3.10%</td>
-<td>澳大利亚</td>
-</tr>
-<tr>
-<td>11</td>
-<td>BR</td>
-<td>543,392,965</td>
-<td>1.90%</td>
-<td>2.5</td>
-<td>413,190,587</td>
-<td>4.10%</td>
-<td>巴西</td>
-</tr>
-<tr>
-<td>12</td>
-<td>SE</td>
-<td>456,720,739</td>
-<td>1.60%</td>
-<td>42.9</td>
-<td>90,319,074</td>
-<td>0.90%</td>
-<td>瑞典</td>
-</tr>
-<tr>
-<td>13</td>
-<td>IN</td>
-<td>436,733,275</td>
-<td>1.50%</td>
-<td>0.3</td>
-<td>370,137,769</td>
-<td>3.60%</td>
-<td>印度</td>
-</tr>
-<tr>
-<td>14</td>
-<td>PL</td>
-<td>405,405,950</td>
-<td>1.40%</td>
-<td>10</td>
-<td>235,541,715</td>
-<td>2.30%</td>
-<td>波兰</td>
-</tr>
-<tr>
-<td>15</td>
-<td>ES</td>
-<td>402,784,297</td>
-<td>1.40%</td>
-<td>8.5</td>
-<td>111,136,126</td>
-<td>1.10%</td>
-<td>西班牙</td>
-</tr>
-<tr>
-<td>16</td>
-<td>KR</td>
-<td>345,767,946</td>
-<td>1.20%</td>
-<td>6.7</td>
-<td>2,427,826</td>
-<td>0.00%</td>
-<td>韩国</td>
-</tr>
-<tr>
-<td>17</td>
-<td>AR</td>
-<td>344,328,294</td>
-<td>1.20%</td>
-<td>7.5</td>
-<td>284,954,258</td>
-<td>2.80%</td>
-<td>阿根廷</td>
-</tr>
-<tr>
-<td>18</td>
-<td>ZA</td>
-<td>325,325,998</td>
-<td>1.10%</td>
-<td>5.4</td>
-<td>293,199,836</td>
-<td>2.90%</td>
-<td>南非</td>
-</tr>
-<tr>
-<td>19</td>
-<td>EG</td>
-<td>270,336,004</td>
-<td>0.90%</td>
-<td>2.4</td>
-<td>270,008,322</td>
-<td>2.70%</td>
-<td>埃及</td>
-</tr>
-<tr>
-<td>20</td>
-<td>CH</td>
-<td>256,115,135</td>
-<td>0.90%</td>
-<td>29</td>
-<td>119,093,658</td>
-<td>1.20%</td>
-<td>瑞士</td>
-</tr>
-<tr>
-<td>21</td>
-<td>AE</td>
-<td>248,643,595</td>
-<td>0.90%</td>
-<td>26</td>
-<td>15,532,070</td>
-<td>0.20%</td>
-<td>阿联酋</td>
-</tr>
-<tr>
-<td>22</td>
-<td>TR</td>
-<td>241,631,262</td>
-<td>0.80%</td>
-<td>2.8</td>
-<td>43,376,879</td>
-<td>0.40%</td>
-<td>土耳其</td>
-</tr>
-<tr>
-<td>23</td>
-<td>IR</td>
-<td>208,338,953</td>
-<td>0.70%</td>
-<td>2.3</td>
-<td>49,976,209</td>
-<td>0.50%</td>
-<td>伊朗</td>
-</tr>
-<tr>
-<td>24</td>
-<td>CZ</td>
-<td>196,673,655</td>
-<td>0.70%</td>
-<td>18.7</td>
-<td>116,790,955</td>
-<td>1.20%</td>
-<td>捷克</td>
-</tr>
-<tr>
-<td>25</td>
-<td>UA</td>
-<td>179,634,359</td>
-<td>0.60%</td>
-<td>4.8</td>
-<td>55,948,379</td>
-<td>0.60%</td>
-<td>乌克兰</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>排名</th>
+          <th>国家代号</th>
+          <th>地址分配数（/48）</th>
+          <th>总体占比</th>
+          <th>人均地址数量（/48）</th>
+          <th>宣告前缀数量（/48）</th>
+          <th>实际部署比例</th>
+          <th>经济体名</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>US</td>
+          <td>9,126,192,440</td>
+          <td>31.30%</td>
+          <td>26.8</td>
+          <td>1,399,113,308</td>
+          <td>13.80%</td>
+          <td>美国</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>CN</td>
+          <td>4,220,731,486</td>
+          <td>14.50%</td>
+          <td>3</td>
+          <td>1,665,240,127</td>
+          <td>16.40%</td>
+          <td>中国</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>DE</td>
+          <td>1,567,556,343</td>
+          <td>5.40%</td>
+          <td>18.8</td>
+          <td>1,067,282,327</td>
+          <td>10.50%</td>
+          <td>德国</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>GB</td>
+          <td>1,508,704,744</td>
+          <td>5.20%</td>
+          <td>22.2</td>
+          <td>468,594,870</td>
+          <td>4.60%</td>
+          <td>英国</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>FR</td>
+          <td>983,511,453</td>
+          <td>3.40%</td>
+          <td>15.2</td>
+          <td>181,849,911</td>
+          <td>1.80%</td>
+          <td>法国</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>RU</td>
+          <td>896,401,723</td>
+          <td>3.10%</td>
+          <td>6.2</td>
+          <td>196,222,375</td>
+          <td>1.90%</td>
+          <td>俄罗斯</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>NL</td>
+          <td>774,635,835</td>
+          <td>2.70%</td>
+          <td>43.9</td>
+          <td>328,258,068</td>
+          <td>3.20%</td>
+          <td>荷兰</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>IT</td>
+          <td>689,770,536</td>
+          <td>2.40%</td>
+          <td>11.7</td>
+          <td>426,414,680</td>
+          <td>4.20%</td>
+          <td>意大利</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>JP</td>
+          <td>665,723,093</td>
+          <td>2.30%</td>
+          <td>5.4</td>
+          <td>510,861,733</td>
+          <td>5.00%</td>
+          <td>日本</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>AU</td>
+          <td>622,396,680</td>
+          <td>2.10%</td>
+          <td>23.4</td>
+          <td>309,895,455</td>
+          <td>3.10%</td>
+          <td>澳大利亚</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>BR</td>
+          <td>543,392,965</td>
+          <td>1.90%</td>
+          <td>2.5</td>
+          <td>413,190,587</td>
+          <td>4.10%</td>
+          <td>巴西</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>SE</td>
+          <td>456,720,739</td>
+          <td>1.60%</td>
+          <td>42.9</td>
+          <td>90,319,074</td>
+          <td>0.90%</td>
+          <td>瑞典</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>IN</td>
+          <td>436,733,275</td>
+          <td>1.50%</td>
+          <td>0.3</td>
+          <td>370,137,769</td>
+          <td>3.60%</td>
+          <td>印度</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>PL</td>
+          <td>405,405,950</td>
+          <td>1.40%</td>
+          <td>10</td>
+          <td>235,541,715</td>
+          <td>2.30%</td>
+          <td>波兰</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>ES</td>
+          <td>402,784,297</td>
+          <td>1.40%</td>
+          <td>8.5</td>
+          <td>111,136,126</td>
+          <td>1.10%</td>
+          <td>西班牙</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>KR</td>
+          <td>345,767,946</td>
+          <td>1.20%</td>
+          <td>6.7</td>
+          <td>2,427,826</td>
+          <td>0.00%</td>
+          <td>韩国</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>AR</td>
+          <td>344,328,294</td>
+          <td>1.20%</td>
+          <td>7.5</td>
+          <td>284,954,258</td>
+          <td>2.80%</td>
+          <td>阿根廷</td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td>ZA</td>
+          <td>325,325,998</td>
+          <td>1.10%</td>
+          <td>5.4</td>
+          <td>293,199,836</td>
+          <td>2.90%</td>
+          <td>南非</td>
+      </tr>
+      <tr>
+          <td>19</td>
+          <td>EG</td>
+          <td>270,336,004</td>
+          <td>0.90%</td>
+          <td>2.4</td>
+          <td>270,008,322</td>
+          <td>2.70%</td>
+          <td>埃及</td>
+      </tr>
+      <tr>
+          <td>20</td>
+          <td>CH</td>
+          <td>256,115,135</td>
+          <td>0.90%</td>
+          <td>29</td>
+          <td>119,093,658</td>
+          <td>1.20%</td>
+          <td>瑞士</td>
+      </tr>
+      <tr>
+          <td>21</td>
+          <td>AE</td>
+          <td>248,643,595</td>
+          <td>0.90%</td>
+          <td>26</td>
+          <td>15,532,070</td>
+          <td>0.20%</td>
+          <td>阿联酋</td>
+      </tr>
+      <tr>
+          <td>22</td>
+          <td>TR</td>
+          <td>241,631,262</td>
+          <td>0.80%</td>
+          <td>2.8</td>
+          <td>43,376,879</td>
+          <td>0.40%</td>
+          <td>土耳其</td>
+      </tr>
+      <tr>
+          <td>23</td>
+          <td>IR</td>
+          <td>208,338,953</td>
+          <td>0.70%</td>
+          <td>2.3</td>
+          <td>49,976,209</td>
+          <td>0.50%</td>
+          <td>伊朗</td>
+      </tr>
+      <tr>
+          <td>24</td>
+          <td>CZ</td>
+          <td>196,673,655</td>
+          <td>0.70%</td>
+          <td>18.7</td>
+          <td>116,790,955</td>
+          <td>1.20%</td>
+          <td>捷克</td>
+      </tr>
+      <tr>
+          <td>25</td>
+          <td>UA</td>
+          <td>179,634,359</td>
+          <td>0.60%</td>
+          <td>4.8</td>
+          <td>55,948,379</td>
+          <td>0.60%</td>
+          <td>乌克兰</td>
+      </tr>
+  </tbody>
 </table>
 <p>表 20 - 各经济体所持有的 IPv6 地址分配数量，截至 2023 年 12 月</p>
 <p>虽然美国在已分配 IPv6 地址总数中名列榜首，占已分配 IPv6 地址总数的 14%，但人均数量却低于榜单中的其他国家（荷兰、瑞典、瑞士）。一些互联网服务提供商拥有大量 IPv6 地址，这可能是由于早期的 IPv6 分配政策与现在的分配政策有些不同。</p>
@@ -2393,15 +2395,15 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>那么在互联网路由表中，有多少已分配的 IPv6 地址是宣告出来的呢？</p>
 <p>图 14 显示了自 2010 年以来 IPv6 已宣告、未宣告和已分配的地址总量，图 15 对应未宣告地址数占已分配 IPv6 地址总数的百分比。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig14.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig14.png"
-         alt="图 14 - 已宣告、未宣告和已分配的 IPv6 地址总量"/></a><figcaption>
-            <p>图 14 - 已宣告、未宣告和已分配的 IPv6 地址总量</p>
-        </figcaption>
+    alt="图 14 - 已宣告、未宣告和已分配的 IPv6 地址总量"></a><figcaption>
+      <p>图 14 - 已宣告、未宣告和已分配的 IPv6 地址总量</p>
+    </figcaption>
 </figure>
 
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig15.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig15.png"
-         alt="图 15 - 未宣告地址与已分配地址的比例"/></a><figcaption>
-            <p>图 15 - 未宣告地址与已分配地址的比例</p>
-        </figcaption>
+    alt="图 15 - 未宣告地址与已分配地址的比例"></a><figcaption>
+      <p>图 15 - 未宣告地址与已分配地址的比例</p>
+    </figcaption>
 </figure>
 
 <p>2013 年分配地址数量下降的原因是 LACNIC 发生了变化，将向巴西的一大段分配改为向互联网服务提供商和类似终端实体的细化分配和指派。</p>
@@ -2411,16 +2413,16 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>我们再一次发现，围绕互联网近期前景的一系列不确定因素比我们可以合理进行的预测要多得多。</p>
 <p>2017 年，IPv6 部署急剧上升，这在很大程度上受到印度 IPv6 服务部署的影响，尤其来自 Reliance Jio 公司。接下来的 2018 年则较为平静，不过下半年有所上升，这是由于中国主要的服务提供商在进行大规模部署 IPv6 的初步努力。同样的努力在 2019 年加速，IPv6 部署水平整体移动了约 5%，这与中国 IPv6 部署的极速崛起有很大关系。中国的 IPv6 部署水平一直在持续上升，实测 IPv6 已从占用户群的 28% 上升到 2023 年的 32%，说明中国在这一年新增了 3600 万 IPv6 终端客户。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig16.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig16.png"
-         alt="图 16 - IPv6 部署水平，2010 - 2023"/></a><figcaption>
-            <p>图 16 - IPv6 部署水平，2010 - 2023</p>
-        </figcaption>
+    alt="图 16 - IPv6 部署水平，2010 - 2023"></a><figcaption>
+      <p>图 16 - IPv6 部署水平，2010 - 2023</p>
+    </figcaption>
 </figure>
 
 <p>如图 17 所示，2023 年全球 IPv6 的增长更加分散，总体增长率为 2.5%，但蒙古（27%）、不丹（20%）、尼泊尔（17%）、挪威（17%）和瑞典（11%）的 IPv6 部署稳步增长。</p>
 <figure><a href="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig17.png"><img src="https://blog.apnic.net/wp-content/uploads/2024/01/addressing23-fig17.png"
-         alt="图 17 - IPv6 部署水平，2023 年 12 月"/></a><figcaption>
-            <p>图 17 - IPv6 部署水平，2023 年 12 月</p>
-        </figcaption>
+    alt="图 17 - IPv6 部署水平，2023 年 12 月"></a><figcaption>
+      <p>图 17 - IPv6 部署水平，2023 年 12 月</p>
+    </figcaption>
 </figure>
 
 <p>虽然已经有几家服务运营商认定，未来部署 NAT 的预期成本对于他们的服务平台来说不可持续，但仍有相当一部分人认为，NAT 将高性价比地吸收未来几年的互联网人口增长。或者说，这是我所能为大量服务提供商找到的唯一理由，他们现在看上去并没有任何部署双协议栈服务的行动。鉴于这一过渡的最终目标不是在所有地区启用双协议栈，而是关闭 IPv4，因此这还需要一些时间，其不确定性就在于如何估计这段时间。</p>
@@ -2435,14 +2437,14 @@ IPv4 互联网目前的设备数量远远大于它设计时理论能支持的用
 <p>这种求索能取得怎样的成就，目前还不清楚，我们只能拭目以待。</p>
 <hr>
 <p>译文作者：王文鑫</p>
-<p>本文最初发表于 <a href="https://www.edu.cn/xxh/zt/tj/202405/t20240515_2609767.shtml">《中国教育网络》</a>，转载请按此下述授权要求，注明译文作者、使用同一授权，并注明原作者和引用出处。</p>
-<p>感谢 Geoff Huston 先生的亲切支持！</p>
-<p>Thanks to Mr. Geoff Huston for your kind support!</p>
+<p>本译文最初发表于 <a href="https://www.edu.cn/xxh/zt/tj/202405/t20240515_2609767.shtml">《中国教育网络》</a>，转载请按此下述授权要求，注明译文作者、使用同一授权，并注明原作者和引用出处。</p>
+<p>感谢作者 Geoff Huston 的亲切支持！</p>
+<p>Thanks to Geoff Huston (the original author) for your kind support!</p>
 <p>在保证原作者所有权益的情况下，本译文使用 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International 授权，详情见 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en</a>
 超出此授权范围之外的使用需获得“计算机史料随译”项目的许可，详情见 <a href="https://random-cs-hans.github.io">https://random-cs-hans.github.io</a>。</p>
 <p>On the precondition of keeping all rights of the original authors, this translation work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike License (International/4.0), see <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en</a> for details. Permissions beyond the scope of this license are administered by the &ldquo;RandomCSHans&rdquo; Project，see <a href="https://random-cs-hans.github.io">https://random-cs-hans.github.io</a>.</p>
 <figure><img src="http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg"
-         alt="CC BY-NC-SA License"/>
+    alt="CC BY-NC-SA License">
 </figure>
 
 <div class="footnotes" role="doc-endnotes">

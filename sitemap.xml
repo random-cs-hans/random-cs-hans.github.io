@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://random-cs-hans.github.io/posts/2024-02-17-ip-addresses-through-2023/</loc>
-    <lastmod>2024-02-17T00:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://random-cs-hans.github.io/posts/</loc>
+    <lastmod>2024-11-03T19:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://random-cs-hans.github.io/posts/2024-11-03-why-is-routing-security-adoption-moving-so-slowly/</loc>
+    <lastmod>2024-11-03T19:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://random-cs-hans.github.io/posts/2024-02-17-ip-addresses-through-2023/</loc>
     <lastmod>2024-02-17T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://random-cs-hans.github.io/posts/2024-01-31-programming-your-own-computer-alan-kay/</loc>

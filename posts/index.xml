@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>zh-Hans</language>
     <copyright>Copyright © 2024 计算机史料随译组.</copyright>
-    <lastBuildDate>Sat, 17 Feb 2024 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2024 19:38:00 +0800</lastBuildDate>
     <atom:link href="https://random-cs-hans.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>路由安防实践为何推广如此缓慢？</title>
+      <link>https://random-cs-hans.github.io/posts/2024-11-03-why-is-routing-security-adoption-moving-so-slowly/</link>
+      <pubDate>Sun, 03 Nov 2024 19:38:00 +0800</pubDate>
+      <guid>https://random-cs-hans.github.io/posts/2024-11-03-why-is-routing-security-adoption-moving-so-slowly/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://pulse.internetsociety.org/blog/why-is-routing-security-adoption-moving-so-slowly&#34;&gt;原文&lt;/a&gt;所有权利归原作者（Josephine Wolff）所有。本译文在获得原作者同意后发布，译文版权声明见结尾。&lt;/p&gt;&#xA;&lt;p&gt;All rights of the &lt;a href=&#34;https://pulse.internetsociety.org/blog/why-is-routing-security-adoption-moving-so-slowly&#34;&gt;original work&lt;/a&gt; belong to the original author(s) (Josephine Wolff). This translation work is published with the approval of the original author(s) and includes its own copyright disclaimer at the end.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;原文发表时间：2024 年 10 月 15 日。&lt;/p&gt;&#xA;&lt;p&gt;梗概&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在网络内采用路由安防的最佳实践，可以降低客户流量被劫持的风险。&lt;/li&gt;&#xA;&lt;li&gt;地理位置、网络规模、业务类型和地址空间的复杂度，都会影响路由安防措施的采纳程度。&lt;/li&gt;&#xA;&lt;li&gt;最新发现能帮助政策制定者了解当前的挑战，并帮助推广路由安防措施的实施。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;路由安全并不是一个新问题。几十年来，人们一直知道，为实现域间路由而设计的、广泛使用的协议，即边界网关协议（&lt;a href=&#34;https://pulse.internetsociety.org/glossary#bgp&#34;&gt;Border Gateway Protocol, BGP&lt;/a&gt;），存在关键性的漏洞：它缺乏一种内置机制来验证路由信息，这些信息在网络间共享，用来为数据流量选择全局路由。&lt;/p&gt;&#xA;&lt;p&gt;这意味着，当网络在决定流量转发目的地时，往往无法验证目的地网络是否真正能够将其传送到预定地址。因此，&lt;a href=&#34;https://arstechnica.com/information-technology/2022/09/how-3-hours-of-inaction-from-amazon-cost-cryptocurrency-holders-235000/&#34;&gt;流量&lt;/a&gt;&lt;a href=&#34;https://securityboulevard.com/2024/01/orange-spain-outage-bgp-traffic-hijacked-by-threat-actor/&#34;&gt;经常&lt;/a&gt;&lt;a href=&#34;https://www.zdnet.com/article/russian-telco-hijacks-internet-traffic-for-google-aws-cloudflare-and-others/&#34;&gt;会被&lt;/a&gt;&lt;a href=&#34;https://www.bleepingcomputer.com/news/security/cloudflare-blames-recent-outage-on-bgp-hijacking-incident/&#34;&gt;路由&lt;/a&gt;到错误的网络，无论是出于意外还是恶意。人们常把这种问题称为 BGP 劫持。&lt;/p&gt;&#xA;&lt;p&gt;由于 BGP 劫持由来已久，研究人员和技术专家设计了各种方法来阻止它的发生。最常用的解决方案之一，是一个名为 “资源公钥基础设施”（&lt;a href=&#34;https://pulse.internetsociety.org/glossary#rpki&#34;&gt;Resource Public Key Infrastructure, RPKI&lt;/a&gt;）的框架，于 2012 年由互联网工程任务组标准化。&lt;/p&gt;&#xA;&lt;p&gt;在 RPKI 框架下，网络能够发布加密记录，其他网络可以用它们来验证通过 BGP 传播的信息，有效确保网络流量不被劫持。不过，要充分受益于 RPKI 的保护，网络需要为它们使用的整个 IP 地址空间发布 RPKI 记录。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>IP 地址这些年 - 2023年回顾</title>
       <link>https://random-cs-hans.github.io/posts/2024-02-17-ip-addresses-through-2023/</link>
